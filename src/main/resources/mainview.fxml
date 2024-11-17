@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
@@ -16,12 +19,24 @@
                <children>
                   <ImageView fitHeight="177.0" fitWidth="253.0" layoutX="86.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                         <Image url="@pictures/comandos.gif" />
                      </image>
                   </ImageView>
                   <Text layoutX="411.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" wrappingWidth="199.2734375" />
                   <Button layoutX="25.0" layoutY="27.0" mnemonicParsing="false" text="Exportar" />
                   <Button layoutX="598.0" layoutY="27.0" mnemonicParsing="false" text="Salir" />
+                   <ChoiceBox layoutX="132.0" layoutY="27.0" prefWidth="150.0">
+                       <items>
+                           <FXCollections fx:factory="observableArrayList">
+                               <String fx:value="SELECT"/>
+                               <String fx:value="UPDATE"/>
+                               <String fx:value="DELETE"/>
+                               <String fx:value="ADD COLUMN"/>
+                               <String fx:value="DELETE COLUMN"/>
+                           </FXCollections>
+                       </items>
+                   </ChoiceBox>
+                  <Button layoutX="385.0" layoutY="77.0" mnemonicParsing="false" text="Button" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -31,7 +46,7 @@
                <children>
                   <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                         <Image url="@pictures/comandos.gif" />
                      </image>
                   </ImageView>
                   <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
@@ -47,7 +62,7 @@
                <children>
                   <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                         <Image url="@pictures/comandos.gif" />
                      </image>
                   </ImageView>
                   <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
@@ -63,7 +78,7 @@
                <children>
                   <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                         <Image url="@pictures/comandos.gif" />
                      </image>
                   </ImageView>
                   <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
