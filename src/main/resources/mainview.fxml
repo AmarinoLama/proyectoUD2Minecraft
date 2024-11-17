@@ -16,7 +16,7 @@
                <children>
                   <ImageView fitHeight="177.0" fitWidth="253.0" layoutX="86.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="411.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" wrappingWidth="199.2734375" />
@@ -31,7 +31,7 @@
                <children>
                   <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
@@ -47,7 +47,7 @@
                <children>
                   <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
@@ -63,7 +63,7 @@
                <children>
                   <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
+                        <Image url="@../../../../../Pictures/mc/aldeaCercaNuevaCasa.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
