@@ -5,6 +5,7 @@ import java.sql.*;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Conexion {
@@ -14,7 +15,7 @@ public class Conexion {
 
         try {
 
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa", "root", "root");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbddr_minecraft", "root", "root");
             return conexion;
 
         } catch (SQLException e) {
@@ -25,28 +26,31 @@ public class Conexion {
 
     }
 
-    public static List<Items> cargarItems() {
+    public static List<Item> cargarItems() {
 
         String sqQuery = "SELECT * FROM items";
 
         try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
 
-            pstmt.setString(1, nombreDepartamento);
+            List<Item> listaItems = new ArrayList<>();
 
             ResultSet resultado = pstmt.executeQuery();
 
             while (resultado.next()) {
-                int id = resultado.getInt("Num_proxecto");
-                String nome_proxecto = resultado.getString("Nome_proxecto");
-                String lugar = resultado.getString("Lugar");
-                Integer num_departamento = resultado.getInt("Num_departamento");
+                int ItmId = resultado.getInt("ItmId");
+                String ItmName = resultado.getString("ItmName");
+                String ItmDesc = resultado.getString("ItmDesc");
+                Integer ItmStackSize = resultado.getInt("ItmStackSize");
+                String ItmImage = resultado.getString("ItmImage");
 
-                Proxecto proxectoAMostrar = new Proxecto(id, nome_proxecto, lugar, num_departamento);
-                System.out.println(proxectoAMostrar.toString());
+                Item itemActual = new Item(ItmId, ItmName, ItmDesc, ItmStackSize, ItmImage);
+                listaItems.add(itemActual);
+
             }
+            return listaItems;
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e;
+            return null;
         }
 
     }

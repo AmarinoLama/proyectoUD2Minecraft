@@ -6,10 +6,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="824.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
    <children>
-      <TableView layoutX="18.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
+      <TableView fx:id="tablaMain" layoutX="18.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
         <columns>
           <TableColumn fx:id="clmID" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="clmDato1" prefWidth="75.0" text="DATO1" />

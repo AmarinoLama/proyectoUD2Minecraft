@@ -1,10 +1,10 @@
 module edu.badpals.proyectoud2minecraft {
     requires javafx.controls;
     requires javafx.fxml;
-    requires jdk.jdi;
     requires java.sql;
 
-    opens edu.badpals.proyectoud2minecraft to javafx.fxml;
+    opens edu.badpals.proyectoud2minecraft.Model to javafx.base;
     exports edu.badpals.proyectoud2minecraft;
-    opens edu.badpals.proyectoud2minecraft.Controller to javafx.fxml; // Ensure this line is present
+    exports edu.badpals.proyectoud2minecraft.Controller;
+    opens edu.badpals.proyectoud2minecraft.Controller to javafx.fxml;
 }

@@ -1,6 +1,6 @@
 package edu.badpals.proyectoud2minecraft.Model;
 
-public class Items {
+public class Item {
 
 
     /*
@@ -20,7 +20,7 @@ public class Items {
     private Integer ItmStackSize = 0;
     private String ItmImage = "";
 
-    public Items(Integer itmId, String itmName, String itmDesc, Integer itmStackSize, String itmImage) {
+    public Item(Integer itmId, String itmName, String itmDesc, Integer itmStackSize, String itmImage) {
         ItmId = itmId;
         ItmName = itmName;
         ItmDesc = itmDesc;
@@ -28,10 +28,10 @@ public class Items {
         ItmImage = itmImage;
     }
 
-    public Items() {
+    public Item() {
     }
 
-    public Items(String itmName, String itmImage, Integer itmStackSize, String itmDesc) {
+    public Item(String itmName, String itmImage, Integer itmStackSize, String itmDesc) {
         ItmName = itmName;
         ItmImage = itmImage;
         ItmStackSize = itmStackSize;
