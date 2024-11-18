@@ -5,15 +5,15 @@ public class Book {
     private Integer bkId = 0;
     private String bkName = "";
     private String bkType = "";
-    private String BkEnchantment = "";
-    private Integer BkLevel = 0;
+    private String bkEnchantment = "";
+    private Integer bkLevel = 0;
 
-    public Book(Integer bkId, String bkName, String bkType, String BkEnchantment, Integer BkLevel) {
+    public Book(Integer bkId, String bkName, String bkType, String bkEnchantment, Integer bkLevel) {
         this.bkId = bkId;
         this.bkName = bkName;
         this.bkType = bkType;
-        this.BkEnchantment = BkEnchantment;
-        this.BkLevel = BkLevel;
+        this.bkEnchantment = bkEnchantment;
+        this.bkLevel = bkLevel;
     }
 
     public Book() {
@@ -21,8 +21,8 @@ public class Book {
 
     public Book(String bkName, Integer bkLevel, String bkEnchantment, String bkmType) {
         this.bkName = bkName;
-        BkLevel = bkLevel;
-        BkEnchantment = bkEnchantment;
+        this.bkLevel = bkLevel;
+        this.bkEnchantment = bkEnchantment;
         this.bkType = bkmType;
     }
 
@@ -59,19 +59,19 @@ public class Book {
     }
 
     public String getBkEnchantment() {
-        return BkEnchantment;
+        return bkEnchantment;
     }
 
     public void setBkEnchantment(String bkEnchantment) {
-        BkEnchantment = bkEnchantment;
+        this.bkEnchantment = bkEnchantment;
     }
 
     public Integer getBkLevel() {
-        return BkLevel;
+        return bkLevel;
     }
 
     public void setBkLevel(Integer bkLevel) {
-        BkLevel = bkLevel;
+        this.bkLevel = bkLevel;
     }
 
     @Override
@@ -80,8 +80,8 @@ public class Book {
                 "bkId=" + bkId +
                 ", bkName='" + bkName + '\'' +
                 ", bkmType='" + bkType + '\'' +
-                ", BkEnchantment=" + BkEnchantment +
-                ", BkLevel='" + BkLevel + '\'' +
+                ", BkEnchantment=" + bkEnchantment +
+                ", BkLevel='" + bkLevel + '\'' +
                 '}';
     }
 }

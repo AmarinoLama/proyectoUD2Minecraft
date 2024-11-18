@@ -1,8 +1,6 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
-import edu.badpals.proyectoud2minecraft.Model.Book;
-import edu.badpals.proyectoud2minecraft.Model.Conexion;
-import edu.badpals.proyectoud2minecraft.Model.Item;
+import edu.badpals.proyectoud2minecraft.Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -128,6 +126,17 @@ public class MainController {
     }
 
     private void setAndBindCellTitlesPotion() {
+
+
+        List<Potion> itemsActuales = Conexion.cargarPots();
+        tablaMain.getItems().addAll(itemsActuales);
+
+        clmID.setText("ID");
+        clmDato1.setText("Nombre");
+        clmDato2.setText("Efecto");
+        clmDato3.setText("Duración");
+        clmDato4.setText("Nivel");
+
         clmID.setCellValueFactory(new PropertyValueFactory<>("PotId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("PotName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("PotEffect"));
@@ -136,7 +145,6 @@ public class MainController {
     }
 
     private void setAndBindCellTitlesBook() {
-        tablaMain.getItems().clear();
 
         List<Book> itemsActuales = Conexion.cargarBooks();
         tablaMain.getItems().addAll(itemsActuales);
@@ -155,6 +163,17 @@ public class MainController {
     }
 
     private void setAndBindCellTitlesBlock() {
+
+        List<Block> itemsActuales = Conexion.cargarBlocks();
+        tablaMain.getItems().addAll(itemsActuales);
+
+        clmID.setText("ID");
+        clmDato1.setText("Nombre");
+        clmDato2.setText("Luminosidad");
+        clmDato3.setText("Resistencia Explosivos");
+        clmDato4.setText("Inflamabilidad");
+
+
         clmID.setCellValueFactory(new PropertyValueFactory<>("BlkId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("BlkIdName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("BlkLuminosity"));
@@ -163,6 +182,18 @@ public class MainController {
     }
 
     private void setAndBindCellTitlesTool() {
+
+
+        List<Tool> itemsActuales = Conexion.cargarTools();
+        tablaMain.getItems().addAll(itemsActuales);
+
+        clmID.setText("ID");
+        clmDato1.setText("Nombre");
+        clmDato2.setText("Durabilidad");
+        clmDato3.setText("Inflamabilidad");
+        clmDato4.setText("Daño");
+
+
         clmID.setCellValueFactory(new PropertyValueFactory<>("ToolId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("ToolName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("ToolDurability"));

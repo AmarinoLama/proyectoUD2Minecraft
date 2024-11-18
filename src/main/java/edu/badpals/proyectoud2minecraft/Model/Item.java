@@ -2,18 +2,6 @@ package edu.badpals.proyectoud2minecraft.Model;
 
 public class Item {
 
-
-    /*
-
-    ItmId INT AUTO_INCREMENT NOT NULL, -- ID de todos los items (Aqui estan todos)
-    ItmName VARCHAR(40) NOT NULL, -- Nombre del item
-    ItmDesc TEXT NOT NULL, -- Descripción del item
-    ItmStackSize INT NOT NULL, -- Tamaño del stack
-    ItmImage BLOB, -- Imagen del item, se guarda aqui para no tenerla en cada tabla
-    Primary Key (ItmId)
-
-     */
-
     private Integer ItmId = 0;
     private String ItmName = "";
     private String ItmDesc = "";
