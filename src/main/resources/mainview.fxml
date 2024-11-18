@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="824.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
    <children>
       <TableView fx:id="tablaMain" layoutX="18.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
         <columns>
@@ -22,4 +22,4 @@
       <ComboBox layoutX="262.0" layoutY="24.0" prefWidth="150.0" promptText="Tabla" />
       <Button fx:id="btnConsulta" layoutX="433.0" layoutY="24.0" mnemonicParsing="false" onAction="#realizarConsulta" text="Consulta" />
    </children>
-</fx:root>
+</AnchorPane>
