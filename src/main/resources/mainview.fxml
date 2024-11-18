@@ -1,92 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="428.0" maxWidth="662.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="662.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="428.0" tabMaxWidth="662.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
-  <tabs>
-    <Tab text="Bloques">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="637.0">
-               <children>
-                  <ImageView fitHeight="177.0" fitWidth="253.0" layoutX="86.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                         <Image url="@pictures/comandos.gif" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="411.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" wrappingWidth="199.2734375" />
-                  <Button layoutX="25.0" layoutY="27.0" mnemonicParsing="false" text="Exportar" />
-                  <Button layoutX="598.0" layoutY="27.0" mnemonicParsing="false" text="Salir" />
-                   <ChoiceBox layoutX="132.0" layoutY="27.0" prefWidth="150.0">
-                       <items>
-                           <FXCollections fx:factory="observableArrayList">
-                               <String fx:value="SELECT"/>
-                               <String fx:value="UPDATE"/>
-                               <String fx:value="DELETE"/>
-                               <String fx:value="ADD COLUMN"/>
-                               <String fx:value="DELETE COLUMN"/>
-                           </FXCollections>
-                       </items>
-                   </ChoiceBox>
-                  <Button layoutX="385.0" layoutY="77.0" mnemonicParsing="false" text="Button" />
-               </children></AnchorPane>
-      </content>
-    </Tab>
-      <Tab text="Items">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                         <Image url="@pictures/comandos.gif" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
-                  <Button layoutX="25.0" layoutY="27.0" mnemonicParsing="false" text="Exportar" />
-                  <Button layoutX="527.0" layoutY="27.0" mnemonicParsing="false" text="Salir" />
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
-      <Tab text="Entidadeds">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                         <Image url="@pictures/comandos.gif" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
-                  <Button layoutX="25.0" layoutY="27.0" mnemonicParsing="false" text="Exportar" />
-                  <Button layoutX="527.0" layoutY="27.0" mnemonicParsing="false" text="Salir" />
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
-      <Tab text="Pociones">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="168.0" fitWidth="176.0" layoutX="107.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                         <Image url="@pictures/comandos.gif" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="416.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TextText&#10;Text&#10;Text&#10;Text" />
-                  <Button layoutX="25.0" layoutY="27.0" mnemonicParsing="false" text="Exportar" />
-                  <Button layoutX="527.0" layoutY="27.0" mnemonicParsing="false" text="Salir" />
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
-  </tabs>
-</TabPane>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="824.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
+   <children>
+      <TableView layoutX="18.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
+        <columns>
+          <TableColumn fx:id="clmID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="clmDato1" prefWidth="75.0" text="DATO1" />
+            <TableColumn fx:id="clmDato2" prefWidth="75.0" text="DATO2" />
+            <TableColumn fx:id="clmDato3" prefWidth="75.0" text="DATO3" />
+            <TableColumn fx:id="clmDato4" prefWidth="75.0" text="DATO4" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" text="Exportar" />
+      <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" text="Salir" />
+      <ComboBox layoutX="262.0" layoutY="24.0" prefWidth="150.0" promptText="Tabla" />
+      <Button fx:id="btnConsulta" layoutX="433.0" layoutY="24.0" mnemonicParsing="false" onAction="#realizarConsulta" text="Consulta" />
+   </children>
+</fx:root>
