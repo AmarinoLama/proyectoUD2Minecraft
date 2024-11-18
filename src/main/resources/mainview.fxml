@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="824.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="616.0" prefWidth="824.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
    <children>
-      <TableView fx:id="tablaMain" layoutX="18.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
+      <TableView fx:id="tablaMain" layoutX="17.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
         <columns>
           <TableColumn fx:id="clmID" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="clmDato1" prefWidth="75.0" text="DATO1" />
@@ -19,7 +21,17 @@
       </TableView>
       <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" text="Exportar" />
       <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" text="Salir" />
-      <ComboBox layoutX="262.0" layoutY="24.0" prefWidth="150.0" promptText="Tabla" />
+       <ComboBox fx:id="cmbTabla" layoutX="262.0" layoutY="24.0" onAction="#actualizarTabla" prefWidth="150.0" promptText="Items">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Item" />
+                   <String fx:value="Book" />
+                   <String fx:value="Potion" />
+                   <String fx:value="Block" />
+                   <String fx:value="Tool" />
+               </FXCollections>
+           </items>
+       </ComboBox>
       <Button fx:id="btnConsulta" layoutX="433.0" layoutY="24.0" mnemonicParsing="false" onAction="#realizarConsulta" text="Consulta" />
    </children>
 </fx:root>

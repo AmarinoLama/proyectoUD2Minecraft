@@ -1,10 +1,12 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
+import edu.badpals.proyectoud2minecraft.Model.Book;
 import edu.badpals.proyectoud2minecraft.Model.Conexion;
 import edu.badpals.proyectoud2minecraft.Model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -21,6 +23,9 @@ public class MainController {
 
     @FXML
     private Button btnSalir;
+
+    @FXML
+    private ComboBox<String> cmbTabla;
 
     @FXML
     private TableColumn<?, ?> clmDato1;
@@ -54,9 +59,38 @@ public class MainController {
         clmDato3.setPrefWidth(140);
         clmDato4.setPrefWidth(100);
 
-        setCellTitlesItem();
+
+        setAndBindCellTitlesItem();
         realizarConsulta(null);
 
+
+
+    }
+
+    @FXML
+    void actualizarTabla(ActionEvent event) {
+
+        String seleccion = cmbTabla.getValue();
+        tablaMain.getItems().clear();
+        switch (seleccion) {
+            case "Item":
+                setAndBindCellTitlesItem();
+                break;
+            case "Book":
+                setAndBindCellTitlesBook();
+                break;
+            case "Potion":
+                setAndBindCellTitlesPotion();
+                break;
+            case "Block":
+                setAndBindCellTitlesBlock();
+                break;
+            case "Tool":
+                setAndBindCellTitlesTool();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + seleccion);
+        }
 
 
 
@@ -65,14 +99,7 @@ public class MainController {
     @FXML
     public void realizarConsulta(ActionEvent event) {
 
-        clmID.setText("ID");
-        clmDato1.setText("Nombre");
-        clmDato2.setText("Descripción");
-        clmDato3.setText("Tamaño Stack");
-        clmDato4.setText("Imagen");
 
-        List<Item> itemsActuales = Conexion.cargarItems();
-        tablaMain.getItems().addAll(itemsActuales);
     }
 
     @FXML
@@ -80,15 +107,27 @@ public class MainController {
 
     }
 
-    private void setCellTitlesItem() {
+    private void setAndBindCellTitlesItem() {
+
+        List<Item> itemsActuales = Conexion.cargarItems();
+        tablaMain.getItems().addAll(itemsActuales);
+
+        clmID.setText("ID");
+        clmDato1.setText("Nombre");
+        clmDato2.setText("Descripción");
+        clmDato3.setText("Tamaño Stack");
+        clmDato4.setText("Imagen");
+
         clmID.setCellValueFactory(new PropertyValueFactory<>("ItmId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("ItmName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("ItmDesc"));
         clmDato3.setCellValueFactory(new PropertyValueFactory<>("ItmStackSize"));
         clmDato4.setCellValueFactory(new PropertyValueFactory<>("ItmImage"));
+
+
     }
 
-    private void setCellTitlesPotion() {
+    private void setAndBindCellTitlesPotion() {
         clmID.setCellValueFactory(new PropertyValueFactory<>("PotId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("PotName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("PotEffect"));
@@ -96,15 +135,26 @@ public class MainController {
         clmDato4.setCellValueFactory(new PropertyValueFactory<>("PotLevel"));
     }
 
-    private void setCellTitlesBook() {
-        clmID.setCellValueFactory(new PropertyValueFactory<>(""));
+    private void setAndBindCellTitlesBook() {
+        tablaMain.getItems().clear();
+
+        List<Book> itemsActuales = Conexion.cargarBooks();
+        tablaMain.getItems().addAll(itemsActuales);
+
+        clmID.setText("ID");
+        clmDato1.setText("Nombre");
+        clmDato2.setText("Tipo");
+        clmDato3.setText("Encantamiento");
+        clmDato4.setText("Nivel");
+
+        clmID.setCellValueFactory(new PropertyValueFactory<>("BkId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("BkName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("BkType"));
         clmDato3.setCellValueFactory(new PropertyValueFactory<>("BkEnchantment"));
         clmDato4.setCellValueFactory(new PropertyValueFactory<>("BkLevel"));
     }
 
-    private void setCellTitlesBlock() {
+    private void setAndBindCellTitlesBlock() {
         clmID.setCellValueFactory(new PropertyValueFactory<>("BlkId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("BlkIdName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("BlkLuminosity"));
@@ -112,7 +162,7 @@ public class MainController {
         clmDato4.setCellValueFactory(new PropertyValueFactory<>("BlkFlammable"));
     }
 
-    private void setCellTitlesTool() {
+    private void setAndBindCellTitlesTool() {
         clmID.setCellValueFactory(new PropertyValueFactory<>("ToolId"));
         clmDato1.setCellValueFactory(new PropertyValueFactory<>("ToolName"));
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("ToolDurability"));
