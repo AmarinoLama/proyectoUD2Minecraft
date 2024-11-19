@@ -132,6 +132,23 @@ public class MainController {
     }
 
     @FXML
+    public void asignarItem(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/asignarItem.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Asignar Item");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            actualizarTabla(event);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
     public void filtrarDatos(ActionEvent event) {
         System.out.println("funciona filtrar datos");
     }

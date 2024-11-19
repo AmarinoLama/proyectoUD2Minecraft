@@ -6,28 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.util.Objects;
+
 public class AnadirDatosController {
-
-    @FXML
-    private Button btnActualizar;
-
-    @FXML
-    private Button btnBorrar;
-
-    @FXML
-    private TextField idBorrar;
-
-    @FXML
-    private TextField idPrincipal;
-
-    @FXML
-    private Toggle rbtnGroup;
-
-    @FXML
-    private RadioButton rbtAnadir;
-
-    @FXML
-    private RadioButton rbtnModif;
 
     @FXML
     private TextField txtDat1;
@@ -42,29 +23,29 @@ public class AnadirDatosController {
     private TextField txtDat4;
 
     @FXML
-    private Text txtTabla;
-
-    @FXML
-    public void initialize() {
-        idPrincipal.setDisable(true);
-        idPrincipal.setPromptText("No disponible");
-    }
-
-    @FXML
     public void insertarItem(ActionEvent event) {
-        int rowAffected = Conexion.insertarDatos("Items", txtDat1.getText(), txtDat2.getText(), txtDat3.getText(), txtDat4.getText());
-        if (rowAffected == 1) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Información");
-            alert.setHeaderText("Inserción exitosa");
-            alert.setContentText("El dato ha sido insertado correctamente");
-            alert.showAndWait();
-        } else {
+
+        if (txtDat1.getText().isEmpty() || txtDat2.getText().isEmpty() || txtDat3.getText().isEmpty() || txtDat4.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error al insertar");
-            alert.setContentText("El dato no ha podido ser insertado");
+            alert.setContentText("Todos los campos deben estar rellenados");
             alert.showAndWait();
+        } else {
+            int rowAffected = Conexion.insertarDatos("Items", txtDat1.getText(), txtDat2.getText(), txtDat3.getText(), txtDat4.getText());
+            if (rowAffected == 1) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Información");
+                alert.setHeaderText("Inserción exitosa");
+                alert.setContentText("El dato ha sido insertado correctamente");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error al insertar");
+                alert.setContentText("El dato no ha podido ser insertado");
+                alert.showAndWait();
+            }
         }
     }
 }

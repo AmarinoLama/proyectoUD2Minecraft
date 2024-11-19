@@ -1,5 +1,6 @@
 package edu.badpals.proyectoud2minecraft;
 
+import edu.badpals.proyectoud2minecraft.Model.Conexion;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

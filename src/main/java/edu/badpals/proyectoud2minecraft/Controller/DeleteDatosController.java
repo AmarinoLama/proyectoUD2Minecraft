@@ -15,6 +15,11 @@ public class DeleteDatosController {
     @FXML
     private TextField idBorrar;
 
+      /*
+            todo poner los mensajes de alerta en view
+     */
+
+
     @FXML
     void borrarPorId(ActionEvent event) {
         if (idBorrar.getText().isEmpty()) {
@@ -24,12 +29,20 @@ public class DeleteDatosController {
             alert.setContentText("El campo de ID no puede estar vacío");
             alert.showAndWait();
         } else {
-            Conexion.borrarDatos(idBorrar.getText());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Información");
-            alert.setHeaderText("Borrado exitoso");
-            alert.setContentText("El dato ha sido borrado correctamente");
-            alert.showAndWait();
+            int rows = Conexion.borrarDatos(idBorrar.getText());
+            if (rows == 1) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Información");
+                alert.setHeaderText("Borrado exitoso");
+                alert.setContentText("El dato ha sido borrado correctamente");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error al borrar");
+                alert.setContentText("No se ha podido borrar el dato");
+                alert.showAndWait();
+            }
         }
     }
 }

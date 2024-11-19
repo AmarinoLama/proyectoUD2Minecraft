@@ -1,5 +1,7 @@
 package edu.badpals.proyectoud2minecraft.Model;
 
+import javafx.scene.control.Alert;
+
 import java.security.spec.ECField;
 import java.sql.*;
 
@@ -217,6 +219,10 @@ public class Conexion {
         }
     }
 
+    /*
+            todo poner los mensajes de alerta en view
+     */
+
     public static int borrarDatos(String text) {
 
             String sqQuery = "DELETE FROM Items WHERE ItmId = ?";
@@ -226,12 +232,58 @@ public class Conexion {
                 pstmt.setString(1, text);
 
                 int rowsAffected = pstmt.executeUpdate();
+
                 return rowsAffected;
 
             } catch (SQLException e) {
-                e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error al borrar");
+                alert.setContentText("El campo de ID no puede estar vacío");
+                alert.showAndWait();
                 return 0;
             }
+    }
+
+    public static List<String> obtenerColumnasTabla(String tabla) {
+        List<String> columnas = new ArrayList<>();
+        try (Connection conexion = connectDB()) {
+            DatabaseMetaData metaData = conexion.getMetaData();
+            ResultSet rs = metaData.getColumns("bbddr_minecraft", null, tabla, null);
+            while (rs.next()) {
+                String columna = rs.getString("COLUMN_NAME");
+                columnas.add(columna);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return columnas;
+    }
+
+    public static void asignarItem(String idItem, String tabla, String text1, String text2, String text3, String text4) {
+
+        String query = "INSERT INTO " + tabla + " VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement pstmt = connectDB().prepareStatement(query);
+            pstmt.setString(1, idItem);
+            pstmt.setString(2, text1);
+            pstmt.setString(3, text2);
+            pstmt.setString(4, text3);
+            pstmt.setString(5, text4);
+            pstmt.executeUpdate();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Información");
+            alert.setHeaderText("Asignación exitosa");
+            alert.setContentText("El dato ha sido asignado correctamente");
+            alert.showAndWait();
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error al asignar");
+            alert.setContentText("El dato no ha podido ser asignado");
+            alert.showAndWait();
+        }
     }
 }
 
