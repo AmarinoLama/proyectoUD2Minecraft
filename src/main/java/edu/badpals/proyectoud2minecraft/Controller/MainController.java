@@ -102,7 +102,7 @@ public class MainController {
 
     @FXML
     void salirPrograma(ActionEvent event) {
-
+        System.exit(0);
     }
 
     private void setAndBindCellTitlesItem() {
