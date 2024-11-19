@@ -103,7 +103,7 @@ public class ControllerLogin {
 
     }
 
-    public static List<User> getcredentials() {
+    public static List<User> getUsersAndPasswords() {
 
         String sqQuery = "SELECT * FROM credentials";
 
@@ -127,5 +127,54 @@ public class ControllerLogin {
             e.printStackTrace();
             return null;
         }
+    }
+
+    private static boolean comprobarMatchUsuario(List<User> usuarios, String usuarioProvisto) {
+
+        for (User usuario: usuarios){
+            if (usuario.getName() != usuarioProvisto) {
+
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static User encontrarUsuarioPorNombre(List<User> usuarios, String usuarioProvisto) {
+
+        for (User usuario : usuarios) {
+            if (usuario != null && usuario.getName().equals(usuarioProvisto)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+
+
+    public static boolean validatePass(String user, String password) {
+
+        try{
+
+            List<User> listaUsuariosRegistrados = getUsersAndPasswords();
+
+            if (!comprobarMatchUsuario(listaUsuariosRegistrados,user) || encontrarUsuarioPorNombre(listaUsuariosRegistrados,user) == null) {
+                return false;
+            } else {
+
+                User usuarioComprobado = encontrarUsuarioPorNombre(listaUsuariosRegistrados, user);
+
+
+                String hasedPass = hasher(password);
+
+                return usuarioComprobado.getPassword().equals(hasedPass);
+
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
