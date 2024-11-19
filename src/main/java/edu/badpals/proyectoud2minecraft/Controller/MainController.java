@@ -3,18 +3,25 @@ package edu.badpals.proyectoud2minecraft.Controller;
 import edu.badpals.proyectoud2minecraft.Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class MainController {
 
     @FXML
-    private Button btnConsulta;
+    private MenuButton btnGroup;
+
+    @FXML
+    private Button btnBuscar;
 
     @FXML
     private Button btnExportar;
@@ -49,7 +56,7 @@ public class MainController {
     }
 
     @FXML
-    public void initialize() {
+    public void initialize() throws IOException {
 
         clmID.setPrefWidth(100);
         clmDato1.setPrefWidth(150);
@@ -57,11 +64,9 @@ public class MainController {
         clmDato3.setPrefWidth(140);
         clmDato4.setPrefWidth(100);
 
-
         setAndBindCellTitlesItem();
-        realizarConsulta(null);
 
-
+        cmbTabla.setValue("Items");
 
     }
 
@@ -71,33 +76,64 @@ public class MainController {
         String seleccion = cmbTabla.getValue();
         tablaMain.getItems().clear();
         switch (seleccion) {
-            case "Item":
+            case "Items":
                 setAndBindCellTitlesItem();
                 break;
-            case "Book":
+            case "Books":
                 setAndBindCellTitlesBook();
                 break;
-            case "Potion":
+            case "Potions":
                 setAndBindCellTitlesPotion();
                 break;
-            case "Block":
+            case "Blocks":
                 setAndBindCellTitlesBlock();
                 break;
-            case "Tool":
+            case "Tools":
                 setAndBindCellTitlesTool();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + seleccion);
         }
 
-
-
     }
 
     @FXML
-    public void realizarConsulta(ActionEvent event) {
+    public void anadirDato(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/anadirDatos.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Añadir Datos");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            actualizarTabla(event);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    @FXML
+    public void borrarDato(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/deleteDatos.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Borrar Datos");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            actualizarTabla(event);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    @FXML
+    public void filtrarDatos(ActionEvent event) {
+        System.out.println("funciona filtrar datos");
     }
 
     @FXML

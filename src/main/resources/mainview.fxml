@@ -4,6 +4,8 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,17 +23,23 @@
       </TableView>
       <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" text="Exportar" />
       <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" text="Salir" />
-       <ComboBox fx:id="cmbTabla" layoutX="262.0" layoutY="24.0" onAction="#actualizarTabla" prefWidth="150.0" promptText="Items">
+       <ComboBox fx:id="cmbTabla" layoutX="257.0" layoutY="24.0" onAction="#actualizarTabla" prefWidth="150.0" promptText="Items">
            <items>
                <FXCollections fx:factory="observableArrayList">
-                   <String fx:value="Item" />
-                   <String fx:value="Book" />
-                   <String fx:value="Potion" />
-                   <String fx:value="Block" />
-                   <String fx:value="Tool" />
+                   <String fx:value="Items" />
+                   <String fx:value="Books" />
+                   <String fx:value="Potions" />
+                   <String fx:value="Blocks" />
+                   <String fx:value="Tools" />
                </FXCollections>
            </items>
        </ComboBox>
-      <Button fx:id="btnConsulta" layoutX="433.0" layoutY="24.0" mnemonicParsing="false" onAction="#realizarConsulta" text="Consulta" />
+      <Button fx:id="btnBuscar" layoutX="414.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" text="🔎" />
+      <MenuButton fx:id="btnGroup" layoutX="496.0" layoutY="24.0" mnemonicParsing="false" text="Acción" >
+        <items>
+          <MenuItem mnemonicParsing="false" text="Añadir dato en item" onAction="#anadirDato"/>
+          <MenuItem mnemonicParsing="false" text="Borrar dato por id" onAction="#borrarDato"/>
+        </items>
+      </MenuButton>
    </children>
 </AnchorPane>

@@ -175,5 +175,63 @@ public class Conexion {
         }
 
     }
+
+    public static int insertarDatos(String tabla, String dato1, String dato2, String dato3, String dato4) {
+
+        String sqQuery = "INSERT INTO " + tabla + " VALUES (null, ?, ?, ?, ?)";
+
+        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+
+            pstmt.setString(1, dato1);
+            pstmt.setString(2, dato2);
+            pstmt.setString(3, dato3);
+            pstmt.setString(4, dato4);
+
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static int modificarDatos(String text, String text1, String text2, String text3, String text4, String text5) {
+
+        String sqQuery = "UPDATE " + text + " SET BkName = ?, BkType = ?, BkEnchantment = ?, BkLevel = ? WHERE BkId = ?";
+
+        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+
+            pstmt.setString(1, text2);
+            pstmt.setString(2, text3);
+            pstmt.setString(3, text4);
+            pstmt.setString(4, text5);
+            pstmt.setString(5, text1);
+
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static int borrarDatos(String text) {
+
+            String sqQuery = "DELETE FROM Items WHERE ItmId = ?";
+
+            try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+
+                pstmt.setString(1, text);
+
+                int rowsAffected = pstmt.executeUpdate();
+                return rowsAffected;
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return 0;
+            }
+    }
 }
 
