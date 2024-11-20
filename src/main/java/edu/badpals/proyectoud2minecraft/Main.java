@@ -13,12 +13,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainview.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/loginscene.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
-        stage.setTitle("Proyecto UD2 Minecraft");
+        stage.setTitle("Login - Proyecto UD2 Minecraft");
         stage.show();
     }
 
