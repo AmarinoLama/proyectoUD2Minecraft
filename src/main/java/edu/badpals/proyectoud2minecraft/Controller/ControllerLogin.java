@@ -3,11 +3,16 @@ package edu.badpals.proyectoud2minecraft.Controller;
 import edu.badpals.proyectoud2minecraft.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.security.MessageDigest;
@@ -25,13 +30,13 @@ public class ControllerLogin {
     private ImageView imgLogin;
 
     @FXML
-    private PasswordField lblContraseña;
+    private PasswordField lblContrasena;
 
     @FXML
     private TextField lblUsuario;
 
     @FXML
-    private Label txtContraseña;
+    private Label txtContrasena;
 
     @FXML
     private Label txtCredenciales;
@@ -52,11 +57,31 @@ public class ControllerLogin {
 
     @FXML
     void btnLoginClicked(ActionEvent event) throws IOException {
-        System.out.println("Login button clicked");
+
+        String usuario = lblUsuario.getText();
+        String contrasena = lblContrasena.getText();
+
+
+        if (validatePass(usuario, contrasena)) {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/mainview.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Proyecto UD2 Minecraft");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            Stage currentStage = (Stage) btnLogin.getScene().getWindow();
+            currentStage.close();
+            stage.show();
+
+        } else {
+            txtError.setText("Usuario y/o contraseña incorrectos");
+        }
     }
 
-    public Label getTxtContraseña() {
-        return txtContraseña;
+    public Label getTxtContrasena() {
+        return txtContrasena;
     }
 
     public Label getTxtCredenciales() {
@@ -129,18 +154,6 @@ public class ControllerLogin {
         }
     }
 
-    private static boolean comprobarMatchUsuario(List<User> usuarios, String usuarioProvisto) {
-
-        for (User usuario: usuarios){
-            if (usuario.getName() != usuarioProvisto) {
-
-            } else {
-                return true;
-            }
-        }
-        return false;
-    }
-
     private static User encontrarUsuarioPorNombre(List<User> usuarios, String usuarioProvisto) {
 
         for (User usuario : usuarios) {
@@ -159,7 +172,9 @@ public class ControllerLogin {
 
             List<User> listaUsuariosRegistrados = getUsersAndPasswords();
 
-            if (!comprobarMatchUsuario(listaUsuariosRegistrados,user) || encontrarUsuarioPorNombre(listaUsuariosRegistrados,user) == null) {
+
+
+            if (encontrarUsuarioPorNombre(listaUsuariosRegistrados,user) == null) {
                 return false;
             } else {
 
