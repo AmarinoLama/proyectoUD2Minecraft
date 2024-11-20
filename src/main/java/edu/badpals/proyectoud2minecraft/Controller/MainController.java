@@ -164,7 +164,19 @@ public class MainController {
 
     @FXML
     public void filtrarDatos(ActionEvent event) {
-        System.out.println("funciona filtrar datos");
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ordenarFiltrar.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Filtrar Items");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            actualizarTabla(event);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
