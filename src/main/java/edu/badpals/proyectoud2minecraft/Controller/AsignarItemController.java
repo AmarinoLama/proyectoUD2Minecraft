@@ -38,6 +38,7 @@ public class AsignarItemController {
     @FXML
     void asignarTipo(ActionEvent event) {
         String seleccion = cmbTipoItem.getValue();
+        txtDato1.setPromptText("Nombre");
         switch (seleccion) {
             case "Books":
                 setDatosBooks();
@@ -55,51 +56,41 @@ public class AsignarItemController {
     }
 
     private void setDatosTools() {
-        txtDato1.setPromptText("Nombre");
         txtDato2.setPromptText("Durabilidad (num)");
         txtDato3.setPromptText("Flameable (num)");
         txtDato4.setPromptText("Daño (num)");
 
-        txtDato1.setText("");
-        txtDato2.setText("");
-        txtDato3.setText("");
-        txtDato4.setText("");
+        borrarCasillas();
     }
 
     private void setDatosBlocks() {
-        txtDato1.setPromptText("Nombre");
         txtDato2.setPromptText("Luminosidad (num)");
         txtDato3.setPromptText("Resistencia (num)");
         txtDato4.setPromptText("Flameable (num)");
 
-        txtDato1.setText("");
-        txtDato2.setText("");
-        txtDato3.setText("");
-        txtDato4.setText("");
+        borrarCasillas();
     }
 
     private void setDatosPotions() {
-        txtDato1.setPromptText("Nombre");
         txtDato2.setPromptText("Efecto");
         txtDato3.setPromptText("Duración (num)");
         txtDato4.setPromptText("Nivel (num)");
 
-        txtDato1.setText("");
-        txtDato2.setText("");
-        txtDato3.setText("");
-        txtDato4.setText("");
+        borrarCasillas();
     }
 
     private void setDatosBooks() {
-        txtDato1.setPromptText("Nombre");
-        txtDato2.setPromptText("Tipo");
+        txtDato2.setPromptText("Normal / Encantado / Escrito");
         txtDato3.setPromptText("Encantamiento");
         txtDato4.setPromptText("Nivel (num)");
 
+        borrarCasillas();
+    }
+
+    public void borrarCasillas() {
         txtDato1.setText("");
         txtDato2.setText("");
         txtDato3.setText("");
         txtDato4.setText("");
     }
-
 }

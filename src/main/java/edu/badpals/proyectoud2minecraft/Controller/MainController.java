@@ -56,7 +56,7 @@ public class MainController {
     }
 
     @FXML
-    public void initialize() throws IOException {
+    public void initialize() {
 
         setAndBindCellTitlesItem();
 
@@ -139,6 +139,23 @@ public class MainController {
             actualizarTabla(event);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    public void modificarItem(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/modificarItem.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Modificar Item");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            actualizarTabla(event);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 

@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pictures.ModificarItem"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="tablaActual" prefHeight="293.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.ModificarItemController">
+   <children>
+      <Button fx:id="btnCargar" layoutX="213.0" layoutY="74.0" mnemonicParsing="false" onAction="#cargarDatos" text="Cargar Datos" />
+      <Button fx:id="btnAceptar" layoutX="228.0" layoutY="242.0" mnemonicParsing="false" onAction="#modificarItem" text="Modificar" />
+      <TextField fx:id="txtDato1" layoutX="55.0" layoutY="148.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="txtDato2" layoutX="55.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="txtDato4" layoutX="314.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="txtDato3" layoutX="314.0" layoutY="149.0" prefHeight="25.0" prefWidth="186.0" />
+      <Text layoutX="17.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato1:" wrappingWidth="57.0" />
+      <Text layoutX="262.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato4:" wrappingWidth="75.6875" />
+      <Text layoutX="261.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato3:" wrappingWidth="75.6875" />
+      <Text layoutX="17.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato2:" wrappingWidth="66.0" />
+      <ComboBox fx:id="cmbTipoItem" layoutX="364.0" layoutY="29.0" onAction="#asignarTipo" prefHeight="25.0" prefWidth="125.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Items" />
+               <String fx:value="Blocks" />
+               <String fx:value="Books" />
+               <String fx:value="Tools" />
+               <String fx:value="Potions" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <Text layoutX="17.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar el item con ID" />
+      <TextField fx:id="idItem" layoutX="152.0" layoutY="29.0" prefHeight="25.0" prefWidth="66.0" />
+      <Text layoutX="231.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="como un objeto de tipo" />
+      <Separator layoutX="1.0" layoutY="120.0" prefHeight="4.0" prefWidth="511.0" />
+   </children>
 </AnchorPane>

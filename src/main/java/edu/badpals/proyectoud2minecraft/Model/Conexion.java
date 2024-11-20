@@ -70,7 +70,7 @@ public class Conexion {
             while (resultado.next()) {
                 int BkId = resultado.getInt("BkId");
                 String BkName = resultado.getString("BkName");
-                String BkType = resultado.getString("BkType");
+                TipoLibro BkType = TipoLibro.valueOf(resultado.getString("BkType").toUpperCase());
                 String BkEnchantment = resultado.getString("BkEnchantment");
 
                 if (BkEnchantment == null) {
@@ -262,16 +262,11 @@ public class Conexion {
 
     public static void asignarItem(String idItem, String tabla, String text1, String text2, String text3, String text4) {
 
-        String query = "INSERT INTO " + tabla + " VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO " + tabla + " VALUES ('" + idItem + "', '" + text1 + "', '" + text2 + "', '" + text3 + "', '" + text4 + "')";
 
         try {
-            PreparedStatement pstmt = connectDB().prepareStatement(query);
-            pstmt.setString(1, idItem);
-            pstmt.setString(2, text1);
-            pstmt.setString(3, text2);
-            pstmt.setString(4, text3);
-            pstmt.setString(5, text4);
-            pstmt.executeUpdate();
+            Statement stmt = connectDB().createStatement();
+            stmt.executeUpdate(query);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Información");
             alert.setHeaderText("Asignación exitosa");
@@ -283,6 +278,40 @@ public class Conexion {
             alert.setHeaderText("Error al asignar");
             alert.setContentText("El dato no ha podido ser asignado");
             alert.showAndWait();
+        }
+    }
+
+    public static List<String> cargarDatosObjeto(String tabla, String id) {
+        List<String> datosTabla = obtenerColumnasTabla(tabla);
+        String sqQuery = "SELECT * FROM " + tabla + " WHERE " + datosTabla.get(0) + " = " + id;
+        List<String> datos = new ArrayList<>();
+        try (Statement stmt = connectDB().createStatement()) {
+            ResultSet resultado = stmt.executeQuery(sqQuery);
+            ResultSetMetaData rsmd = resultado.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (resultado.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    datos.add(resultado.getString(i));
+                }
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return datos;
+    }
+
+    public static void modificarObjeto(String tabla, String id, String dato1, String dato2, String dato3, String dato4) {
+        List<String> datosTabla = obtenerColumnasTabla(tabla);
+        String sqQuery = "UPDATE " + tabla + " SET " + datosTabla.get(1) + " = ?, " + datosTabla.get(2) + " = ?, " + datosTabla.get(3) + " = ?, " + datosTabla.get(4) + " = ? WHERE " + datosTabla.get(0) + " = ?";
+        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+            pstmt.setString(1, dato1);
+            pstmt.setString(2, dato2);
+            pstmt.setString(3, dato3);
+            pstmt.setString(4, dato4);
+            pstmt.setString(5, id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

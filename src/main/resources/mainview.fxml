@@ -40,6 +40,7 @@
           <MenuItem mnemonicParsing="false" onAction="#anadirDato" text="Añadir dato en item" />
           <MenuItem mnemonicParsing="false" onAction="#borrarDato" text="Borrar dato por id" />
           <MenuItem mnemonicParsing="false" onAction="#asignarItem" text="Asignar tipo a un item" />
+          <MenuItem mnemonicParsing="false" onAction="#modificarItem" text="Modificar un dato" />
         </items>
       </MenuButton>
    </children>

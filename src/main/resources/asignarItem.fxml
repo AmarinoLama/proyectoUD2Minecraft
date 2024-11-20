@@ -25,14 +25,14 @@
       <TextField fx:id="idItem" layoutX="153.0" layoutY="24.0" prefHeight="25.0" prefWidth="66.0" />
       <Text layoutX="232.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="como un objeto de tipo" />
       <Button fx:id="btnAceptar" layoutX="232.0" layoutY="197.0" mnemonicParsing="false" onAction="#asignarItem" text="Aceptar" />
-      <TextField fx:id="txtDato1" layoutX="99.0" layoutY="98.0" prefHeight="25.0" prefWidth="133.0" />
-      <TextField fx:id="txtDato2" layoutX="99.0" layoutY="141.0" prefHeight="25.0" prefWidth="133.0" />
-      <TextField fx:id="txtDato4" layoutX="334.0" layoutY="141.0" prefHeight="25.0" prefWidth="133.0" />
-      <TextField fx:id="txtDato3" layoutX="334.0" layoutY="98.0" prefHeight="25.0" prefWidth="133.0" />
-      <Text layoutX="57.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato1:" wrappingWidth="57.0" />
-      <Text layoutX="281.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato4:" wrappingWidth="75.6875" />
-      <Text layoutX="284.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato3:" wrappingWidth="75.6875" />
-      <Text layoutX="57.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato2:" wrappingWidth="66.0" />
+      <TextField fx:id="txtDato1" layoutX="55.0" layoutY="98.0" prefHeight="25.0" prefWidth="177.0" />
+      <TextField fx:id="txtDato2" layoutX="55.0" layoutY="141.0" prefHeight="25.0" prefWidth="177.0" />
+      <TextField fx:id="txtDato4" layoutX="330.0" layoutY="141.0" prefHeight="25.0" prefWidth="177.0" />
+      <TextField fx:id="txtDato3" layoutX="330.0" layoutY="98.0" prefHeight="25.0" prefWidth="177.0" />
+      <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato1:" wrappingWidth="57.0" />
+      <Text layoutX="283.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato4:" wrappingWidth="75.6875" />
+      <Text layoutX="283.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato3:" wrappingWidth="75.6875" />
+      <Text layoutX="14.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato2:" wrappingWidth="66.0" />
       <Separator layoutX="3.0" layoutY="66.0" prefHeight="16.0" prefWidth="515.0" />
    </children>
 </AnchorPane>

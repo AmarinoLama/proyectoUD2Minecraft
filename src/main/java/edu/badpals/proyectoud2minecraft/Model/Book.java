@@ -4,11 +4,14 @@ public class Book {
 
     private Integer bkId = 0;
     private String bkName = "";
-    private String bkType = "";
+    private TipoLibro bkType;
     private String bkEnchantment = "";
     private Integer bkLevel = 0;
 
-    public Book(Integer bkId, String bkName, String bkType, String bkEnchantment, Integer bkLevel) {
+    public Book() {
+    }
+
+    public Book(Integer bkId, String bkName, TipoLibro bkType, String bkEnchantment, Integer bkLevel) {
         this.bkId = bkId;
         this.bkName = bkName;
         this.bkType = bkType;
@@ -16,25 +19,15 @@ public class Book {
         this.bkLevel = bkLevel;
     }
 
-    public Book() {
-    }
-
-    public Book(String bkName, Integer bkLevel, String bkEnchantment, String bkmType) {
-        this.bkName = bkName;
-        this.bkLevel = bkLevel;
-        this.bkEnchantment = bkEnchantment;
-        this.bkType = bkmType;
-    }
-
     public Integer getBkId() {
         return bkId;
     }
 
-    public String getBkType() {
+    public TipoLibro getBkType() {
         return bkType;
     }
 
-    public void setBkType(String bkType) {
+    public void setBkType(TipoLibro bkType) {
         this.bkType = bkType;
     }
 
@@ -50,11 +43,11 @@ public class Book {
         this.bkName = bkName;
     }
 
-    public String getBkmType() {
+    public TipoLibro getBkmType() {
         return bkType;
     }
 
-    public void setBkmType(String bkmType) {
+    public void setBkmType(TipoLibro bkmType) {
         this.bkType = bkmType;
     }
 

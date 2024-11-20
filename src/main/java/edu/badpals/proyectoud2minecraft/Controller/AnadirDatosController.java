@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class AnadirDatosController {
@@ -21,6 +22,16 @@ public class AnadirDatosController {
 
     @FXML
     private TextField txtDat4;
+
+    @FXML
+    public void initialize() {
+
+        txtDat1.setPromptText("Nombre");
+        txtDat2.setPromptText("Descripción");
+        txtDat3.setPromptText("Num máx stack");
+        txtDat4.setPromptText("URl de la imagen");
+
+    }
 
     @FXML
     public void insertarItem(ActionEvent event) {
