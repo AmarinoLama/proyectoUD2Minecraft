@@ -1,0 +1,61 @@
+[ {
+  "potId" : 31,
+  "potName" : "Poción de Curación",
+  "potEffect" : "Restaura salud",
+  "potDuration" : 45,
+  "potLevel" : 1
+}, {
+  "potId" : 32,
+  "potName" : "Poción de Velocidad",
+  "potEffect" : "Incrementa la velocidad",
+  "potDuration" : 90,
+  "potLevel" : 1
+}, {
+  "potId" : 33,
+  "potName" : "Poción de Invisibilidad",
+  "potEffect" : "Hace invisible al jugador",
+  "potDuration" : 180,
+  "potLevel" : 1
+}, {
+  "potId" : 34,
+  "potName" : "Poción de Resistencia al Fuego",
+  "potEffect" : "Inmunidad al daño por fuego",
+  "potDuration" : 180,
+  "potLevel" : 1
+}, {
+  "potId" : 35,
+  "potName" : "Poción de Fuerza",
+  "potEffect" : "Incrementa el daño cuerpo a cuerpo",
+  "potDuration" : 180,
+  "potLevel" : 2
+}, {
+  "potId" : 36,
+  "potName" : "Poción de Lentitud",
+  "potEffect" : "Reduce la velocidad",
+  "potDuration" : 90,
+  "potLevel" : 1
+}, {
+  "potId" : 37,
+  "potName" : "Poción de Regeneración",
+  "potEffect" : "Recupera salud gradualmente",
+  "potDuration" : 45,
+  "potLevel" : 2
+}, {
+  "potId" : 38,
+  "potName" : "Poción de Salto",
+  "potEffect" : "Incrementa el salto",
+  "potDuration" : 90,
+  "potLevel" : 1
+}, {
+  "potId" : 39,
+  "potName" : "Poción de Agua",
+  "potEffect" : "No tiene efecto",
+  "potDuration" : 0,
+  "potLevel" : 0
+}, {
+  "potId" : 40,
+  "potName" : "Poción de Resistencia a la Caída",
+  "potEffect" : "Reduce el daño por caídas",
+  "potDuration" : 0,
+  "potLevel" : 0
+} ]

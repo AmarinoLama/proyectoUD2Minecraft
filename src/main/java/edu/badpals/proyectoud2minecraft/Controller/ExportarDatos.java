@@ -7,62 +7,52 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
+
 public class ExportarDatos {
 
     public static void exportarAJSON(String tipoObjeto, String rutaArchivo) {
 
-        ObjectMapper mapper = new ObjectMapper();
-
         switch (tipoObjeto) {
-            case "Item":
+            case "Items":
 
-                List<Item> listaItems  = new ArrayList<>();
-                listaItems = Conexion.cargarItems();
+                List<Item> listaItems  = Conexion.cargarItems();
 
                 transaccionExportar(listaItems,tipoObjeto, rutaArchivo);
 
                 break;
-            case "Tool":
+            case "Tools":
 
-                List<Tool> listaTools  = new ArrayList<>();
-                listaTools = Conexion.cargarTools();
+                List<Tool> listaTools  = Conexion.cargarTools();
 
                 transaccionExportar(listaTools, tipoObjeto, rutaArchivo);
 
                 break;
-            case "Book":
+            case "Books":
 
-                List<Book> listaBooks  = new ArrayList<>();
-                listaBooks = Conexion.cargarBooks();
+                List<Book> listaBooks  = Conexion.cargarBooks();
 
                 transaccionExportar(listaBooks,tipoObjeto, rutaArchivo);
 
                 break;
-            case "Potion":
-                List<Potion> listaPotions  = new ArrayList<>();
-                listaPotions = Conexion.cargarPots();
+            case "Potions":
+                List<Potion> listaPotions  = Conexion.cargarPots();
 
                 transaccionExportar(listaPotions,tipoObjeto, rutaArchivo);
 
                 break;
-            case "Block":
+            case "Blocks":
 
-                List<Block> listaBlocks = new ArrayList<>();
-                listaBlocks = Conexion.cargarBlocks();
+                List<Block> listaBlocks = Conexion.cargarBlocks();
 
                 transaccionExportar(listaBlocks,tipoObjeto, rutaArchivo);
-
+                break;
             default:
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Exportar a JSON");
                 alert.setHeaderText("Error en la exportación");
                 alert.setContentText("No se ha podido llevar a cabo la exportación");
                 alert.showAndWait();
-                return;
         }
 
     }
@@ -70,15 +60,19 @@ public class ExportarDatos {
     private static void transaccionExportar(List<?> listaObjetos, String tipoObjeto, String rutaArchivo) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            if (rutaArchivo == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Información");
+            alert.setHeaderText("Archivo generado");
+            if (Objects.equals(rutaArchivo, "")) {
                 mapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/main/resources/ExportacionesDefecto/" + tipoObjeto + ".json"), listaObjetos);
+                alert.setContentText("Archivo JSON generado correctamente: " + ".../src/main/resources/ExportacionesDefecto/" + tipoObjeto + ".json");
             } else {
-                mapper.writerWithDefaultPrettyPrinter().writeValue(new File(rutaArchivo + tipoObjeto + ".json"), listaObjetos);
-                System.out.println("Archivo JSON generado correctamente: " + rutaArchivo + tipoObjeto + ".json");
+                mapper.writerWithDefaultPrettyPrinter().writeValue(new File(rutaArchivo + "/" + tipoObjeto + ".json"), listaObjetos);
+                alert.setContentText("Archivo JSON generado correctamente: " + rutaArchivo + "/" + tipoObjeto + ".json");
             }
+            alert.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }

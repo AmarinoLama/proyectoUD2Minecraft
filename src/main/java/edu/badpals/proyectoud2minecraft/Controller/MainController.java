@@ -51,8 +51,11 @@ public class MainController {
     private TableView<Object> tablaMain;
 
     @FXML
-    void exportarJSON(ActionEvent event) {
+    private TextField txtRuta;
 
+    @FXML
+    void exportarJSON(ActionEvent event) {
+        ExportarDatos.exportarAJSON(cmbTabla.getValue(), txtRuta.getText());
     }
 
     @FXML
