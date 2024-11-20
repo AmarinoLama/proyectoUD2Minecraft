@@ -1,8 +1,7 @@
 module edu.badpals.proyectoud2minecraft {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
-    requires java.desktop;
+    requires com.fasterxml.jackson.databind;
 
     opens edu.badpals.proyectoud2minecraft.Model to javafx.base;
     exports edu.badpals.proyectoud2minecraft;
