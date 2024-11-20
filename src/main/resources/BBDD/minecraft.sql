@@ -20,8 +20,8 @@ CREATE TABLE BLOCKS (
 	BlkId INT NOT NULL, -- ID
     BlkIdName VARCHAR(30) NOT NULL, -- Nombre
     BlkLuminosity INT NOT NULL, -- Radio de luminosidad
-	BlkBlastResistance BOOLEAN NOT NULL, -- si es resistente a explosiones
-    BlkFlammable BOOLEAN NOT NULL, -- Si es inflamable
+	BlkBlastResistance INT NOT NULL, -- si es resistente a explosiones
+    BlkFlammable INT NOT NULL, -- Si es inflamable
     Primary Key (BlkId)
     
 ) ENGINE=INNODB;
@@ -32,7 +32,7 @@ CREATE TABLE TOOLS (
 	ToolId INT NOT NULL, -- ID
     ToolName VARCHAR(30) NOT NULL, -- Nombre de la herramienta
     ToolDurability INT NOT NULL, -- Durabilidad
-    ToolFlammable BOOLEAN NOT NULL, -- Si se rompen cuando se tiran al fuego
+    ToolFlammable INT NOT NULL, -- Si se rompen cuando se tiran al fuego
     ToolDamage FLOAT NOT NULL, -- Daño que hacen al golpear
     Primary Key (ToolId)
 
@@ -77,55 +77,55 @@ ALTER TABLE POTIONS
     ADD CONSTRAINT FK_POTION_IS_ITEM FOREIGN KEY (PotId) REFERENCES ITEMS(ItmId)
 							ON UPDATE CASCADE
 							ON DELETE CASCADE;
-                            
+
 INSERT INTO ITEMS (ItmId, ItmName, ItmDesc, ItmStackSize, ItmImage) VALUES
 -- Bloques
-(1, 'Bloque de Piedra', 'Bloque básico usado para construir', 64, NULL),
-(2, 'Bloque de Hierro', 'Bloque decorativo y funcional', 64, NULL),
-(3, 'Bloque de Oro', 'Bloque decorativo y de construcción', 64, NULL),
-(4, 'Bloque de Esmeralda', 'Elemento decorativo y valioso', 64, NULL),
-(5, 'Bloque de Diamante', 'Material decorativo de alto valor', 64, NULL),
-(6, 'Tierra', 'Bloque común en el mundo', 64, NULL),
-(7, 'Bloque de Slime', 'Bloque con propiedades elásticas', 64, NULL),
-(8, 'Bloque de Miel', 'Bloque pegajoso usado en construcciones', 64, NULL),
-(9, 'Glowstone', 'Bloque Luminoso encontrado en el nether', 64, NULL),
-(10, 'Vidrio', 'Bloque transparente para ventanas', 64, NULL),
+(1, 'Bloque de Piedra', 'Bloque básico usado para construir', 64, 'https://example.com/images/block_stone.png'),
+(2, 'Bloque de Hierro', 'Bloque decorativo y funcional', 64, 'https://example.com/images/block_iron.png'),
+(3, 'Bloque de Oro', 'Bloque decorativo y de construcción', 64, 'https://example.com/images/block_gold.png'),
+(4, 'Bloque de Esmeralda', 'Elemento decorativo y valioso', 64, 'https://example.com/images/block_emerald.png'),
+(5, 'Bloque de Diamante', 'Material decorativo de alto valor', 64, 'https://example.com/images/block_diamond.png'),
+(6, 'Tierra', 'Bloque común en el mundo', 64, 'https://example.com/images/block_dirt.png'),
+(7, 'Bloque de Slime', 'Bloque con propiedades elásticas', 64, 'https://example.com/images/block_slime.png'),
+(8, 'Bloque de Miel', 'Bloque pegajoso usado en construcciones', 64, 'https://example.com/images/block_honey.png'),
+(9, 'Glowstone', 'Bloque Luminoso encontrado en el nether', 64, 'https://example.com/images/block_glowstone.png'),
+(10, 'Vidrio', 'Bloque transparente para ventanas', 64, 'https://example.com/images/block_glass.png'),
 
 -- Herramientas
-(11, 'Espada de Madera', 'Herramienta básica de combate', 1, NULL),
-(12, 'Espada de Hierro', 'Espada con mayor durabilidad', 1, NULL),
-(13, 'Pico de Diamante', 'Herramienta avanzada para minería', 1, NULL),
-(14, 'Hacha de Madera', 'Herramienta básica para talar árboles', 1, NULL),
-(15, 'Hacha de Hierro', 'Hacha con mayor resistencia', 1, NULL),
-(16, 'Pico de Piedra', 'Herramienta de piedra, durabilidad intermedia', 1, NULL),
-(17, 'Espada de Piedra', 'Espada de piedra, durabilidad intermedia', 1, NULL),
-(18, 'Hacha de Piedra', 'Hacha de piedra, durabilidad intermedia', 1, NULL),
-(19, 'Pico de Hierro', 'Pico de hierro, durabilidad alta', 1, NULL),
-(20, 'Caña de Pescar', 'Herramienta para pescar', 1, NULL),
+(11, 'Espada de Madera', 'Herramienta básica de combate', 1, 'https://example.com/images/wooden_sword.png'),
+(12, 'Espada de Hierro', 'Espada con mayor durabilidad', 1, 'https://example.com/images/iron_sword.png'),
+(13, 'Pico de Diamante', 'Herramienta avanzada para minería', 1, 'https://example.com/images/diamond_pickaxe.png'),
+(14, 'Hacha de Madera', 'Herramienta básica para talar árboles', 1, 'https://example.com/images/wooden_axe.png'),
+(15, 'Hacha de Hierro', 'Hacha con mayor resistencia', 1, 'https://example.com/images/iron_axe.png'),
+(16, 'Pico de Piedra', 'Herramienta de piedra, durabilidad intermedia', 1, 'https://example.com/images/stone_pickaxe.png'),
+(17, 'Espada de Piedra', 'Espada de piedra, durabilidad intermedia', 1, 'https://example.com/images/stone_sword.png'),
+(18, 'Hacha de Piedra', 'Hacha de piedra, durabilidad intermedia', 1, 'https://example.com/images/stone_axe.png'),
+(19, 'Pico de Hierro', 'Pico de hierro, durabilidad alta', 1, 'https://example.com/images/iron_pickaxe.png'),
+(20, 'Caña de Pescar', 'Herramienta para pescar', 1, 'https://example.com/images/fishing_rod.png'),
 
 -- Libros
-(21, 'Libro Encantado', 'Libro con encantamiento especial', 1, NULL),
-(22, 'Libro Escrito', 'Libro escrito por un jugador', 1, NULL),
-(23, 'Libro Normal', 'Libro sin ningún encantamiento', 1, NULL),
-(24, 'Libro Encantado', 'Libro con encantamiento de eficiencia', 1, NULL),
-(25, 'Libro Encantado', 'Libro con encantamiento de toques de seda', 1, NULL),
-(26, 'Libro Encantado', 'Libro con encantamiento de afinidad acuática', 1, NULL),
-(27, 'Libro Escrito', 'Libro escrito por Alex', 1, NULL),
-(28, 'Libro Encantado', 'Libro con encantamiento de inquebrantable', 1, NULL),
-(29, 'Libro Normal', 'Libro sin encantamientos', 1, NULL),
-(30, 'Libro Encantado', 'Libro con encantamiento de mending', 1, NULL),
+(21, 'Libro Encantado', 'Libro con encantamiento especial', 1, 'https://example.com/images/enchanted_book.png'),
+(22, 'Libro Escrito', 'Libro escrito por un jugador', 1, 'https://example.com/images/written_book.png'),
+(23, 'Libro Normal', 'Libro sin ningún encantamiento', 1, 'https://example.com/images/normal_book.png'),
+(24, 'Libro Encantado', 'Libro con encantamiento de eficiencia', 1, 'https://example.com/images/enchanted_book_efficiency.png'),
+(25, 'Libro Encantado', 'Libro con encantamiento de toques de seda', 1, 'https://example.com/images/enchanted_book_silk_touch.png'),
+(26, 'Libro Encantado', 'Libro con encantamiento de afinidad acuática', 1, 'https://example.com/images/enchanted_book_aqua_affinity.png'),
+(27, 'Libro Escrito', 'Libro escrito por Alex', 1, 'https://example.com/images/written_book_alex.png'),
+(28, 'Libro Encantado', 'Libro con encantamiento de inquebrantable', 1, 'https://example.com/images/enchanted_book_unbreaking.png'),
+(29, 'Libro Normal', 'Libro sin encantamientos', 1, 'https://example.com/images/normal_book.png'),
+(30, 'Libro Encantado', 'Libro con encantamiento de mending', 1, 'https://example.com/images/enchanted_book_mending.png'),
 
 -- Pociones
-(31, 'Poción de Curación', 'Restaura salud al jugador', 1, NULL),
-(32, 'Poción de Velocidad', 'Aumenta la velocidad del jugador', 1, NULL),
-(33, 'Poción de Invisibilidad', 'Hace invisible al jugador', 1, NULL),
-(34, 'Poción de Resistencia al Fuego', 'Otorga inmunidad al daño por fuego', 1, NULL),
-(35, 'Poción de Fuerza', 'Aumenta el daño cuerpo a cuerpo', 1, NULL),
-(36, 'Poción de Lentitud', 'Reduce la velocidad del jugador', 1, NULL),
-(37, 'Poción de Regeneración', 'Recupera salud gradualmente', 1, NULL),
-(38, 'Poción de Salto', 'Incrementa el salto del jugador', 1, NULL),
-(39, 'Poción de Agua', 'No tiene efecto', 1, NULL),
-(40, 'Poción de Resistencia a la Caída', 'Reduce el daño por caídas', 1, NULL);
+(31, 'Poción de Curación', 'Restaura salud al jugador', 1, 'https://example.com/images/potion_healing.png'),
+(32, 'Poción de Velocidad', 'Aumenta la velocidad del jugador', 1, 'https://example.com/images/potion_speed.png'),
+(33, 'Poción de Invisibilidad', 'Hace invisible al jugador', 1, 'https://example.com/images/potion_invisibility.png'),
+(34, 'Poción de Resistencia al Fuego', 'Otorga inmunidad al daño por fuego', 1, 'https://example.com/images/potion_fire_resistance.png'),
+(35, 'Poción de Fuerza', 'Aumenta el daño cuerpo a cuerpo', 1, 'https://example.com/images/potion_strength.png'),
+(36, 'Poción de Lentitud', 'Reduce la velocidad del jugador', 1, 'https://example.com/images/potion_slowness.png'),
+(37, 'Poción de Regeneración', 'Recupera salud gradualmente', 1, 'https://example.com/images/potion_regeneration.png'),
+(38, 'Poción de Salto', 'Incrementa el salto del jugador', 1, 'https://example.com/images/potion_leaping.png'),
+(39, 'Poción de Agua', 'No tiene efecto', 1, 'https://example.com/images/potion_water.png'),
+(40, 'Poción de Resistencia a la Caída', 'Reduce el daño por caídas', 1, 'https://example.com/images/potion_fall_resistance.png');
 
 
 
