@@ -60,8 +60,6 @@ public class ControllerLogin {
 
         String usuario = lblUsuario.getText();
         String contrasena = lblContrasena.getText();
-
-
         if (validatePass(usuario, contrasena)) {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/mainview.fxml"));
@@ -78,6 +76,8 @@ public class ControllerLogin {
         } else {
             txtError.setText("Usuario y/o contraseña incorrectos");
         }
+
+
     }
 
     public Label getTxtContrasena() {

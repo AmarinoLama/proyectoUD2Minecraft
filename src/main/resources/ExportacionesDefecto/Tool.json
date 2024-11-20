@@ -1,0 +1,61 @@
+[ {
+  "toolDurability" : 59,
+  "toolName" : "Espada de Madera",
+  "toolFlammable" : 1,
+  "toolDamage" : 4,
+  "toolId" : 11
+}, {
+  "toolDurability" : 250,
+  "toolName" : "Espada de Hierro",
+  "toolFlammable" : 0,
+  "toolDamage" : 6,
+  "toolId" : 12
+}, {
+  "toolDurability" : 1561,
+  "toolName" : "Pico de Diamante",
+  "toolFlammable" : 0,
+  "toolDamage" : 5,
+  "toolId" : 13
+}, {
+  "toolDurability" : 59,
+  "toolName" : "Hacha de Madera",
+  "toolFlammable" : 1,
+  "toolDamage" : 3,
+  "toolId" : 14
+}, {
+  "toolDurability" : 250,
+  "toolName" : "Hacha de Hierro",
+  "toolFlammable" : 0,
+  "toolDamage" : 5,
+  "toolId" : 15
+}, {
+  "toolDurability" : 131,
+  "toolName" : "Pico de Piedra",
+  "toolFlammable" : 0,
+  "toolDamage" : 4,
+  "toolId" : 16
+}, {
+  "toolDurability" : 131,
+  "toolName" : "Espada de Piedra",
+  "toolFlammable" : 0,
+  "toolDamage" : 5,
+  "toolId" : 17
+}, {
+  "toolDurability" : 131,
+  "toolName" : "Hacha de Piedra",
+  "toolFlammable" : 0,
+  "toolDamage" : 3,
+  "toolId" : 18
+}, {
+  "toolDurability" : 250,
+  "toolName" : "Pico de Hierro",
+  "toolFlammable" : 0,
+  "toolDamage" : 4,
+  "toolId" : 19
+}, {
+  "toolDurability" : 65,
+  "toolName" : "Caña de Pescar",
+  "toolFlammable" : 0,
+  "toolDamage" : 1,
+  "toolId" : 20
+} ]
