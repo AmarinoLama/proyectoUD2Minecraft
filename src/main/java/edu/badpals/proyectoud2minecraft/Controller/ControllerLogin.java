@@ -61,6 +61,7 @@ public class ControllerLogin {
         String usuario = lblUsuario.getText();
         String contrasena = lblContrasena.getText();
 
+
         if (validatePass(usuario, contrasena)) {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/mainview.fxml"));
@@ -170,6 +171,8 @@ public class ControllerLogin {
         try{
 
             List<User> listaUsuariosRegistrados = getUsersAndPasswords();
+
+
 
             if (encontrarUsuarioPorNombre(listaUsuariosRegistrados,user) == null) {
                 return false;

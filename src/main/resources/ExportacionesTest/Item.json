@@ -1,0 +1,241 @@
+[ {
+  "itmId" : 1,
+  "itmName" : "Bloque de Piedra",
+  "itmDesc" : "Bloque básico usado para construir",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 2,
+  "itmName" : "Bloque de Hierro",
+  "itmDesc" : "Bloque decorativo y funcional",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 3,
+  "itmName" : "Bloque de Oro",
+  "itmDesc" : "Bloque decorativo y de construcción",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 4,
+  "itmName" : "Bloque de Esmeralda",
+  "itmDesc" : "Elemento decorativo y valioso",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 5,
+  "itmName" : "Bloque de Diamante",
+  "itmDesc" : "Material decorativo de alto valor",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 6,
+  "itmName" : "Tierra",
+  "itmDesc" : "Bloque común en el mundo",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 7,
+  "itmName" : "Bloque de Slime",
+  "itmDesc" : "Bloque con propiedades elásticas",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 8,
+  "itmName" : "Bloque de Miel",
+  "itmDesc" : "Bloque pegajoso usado en construcciones",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 9,
+  "itmName" : "Glowstone",
+  "itmDesc" : "Bloque Luminoso encontrado en el nether",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 10,
+  "itmName" : "Vidrio",
+  "itmDesc" : "Bloque transparente para ventanas",
+  "itmImage" : null,
+  "itmStackSize" : 64
+}, {
+  "itmId" : 11,
+  "itmName" : "Espada de Madera",
+  "itmDesc" : "Herramienta básica de combate",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 12,
+  "itmName" : "Espada de Hierro",
+  "itmDesc" : "Espada con mayor durabilidad",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 13,
+  "itmName" : "Pico de Diamante",
+  "itmDesc" : "Herramienta avanzada para minería",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 14,
+  "itmName" : "Hacha de Madera",
+  "itmDesc" : "Herramienta básica para talar árboles",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 15,
+  "itmName" : "Hacha de Hierro",
+  "itmDesc" : "Hacha con mayor resistencia",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 16,
+  "itmName" : "Pico de Piedra",
+  "itmDesc" : "Herramienta de piedra, durabilidad intermedia",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 17,
+  "itmName" : "Espada de Piedra",
+  "itmDesc" : "Espada de piedra, durabilidad intermedia",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 18,
+  "itmName" : "Hacha de Piedra",
+  "itmDesc" : "Hacha de piedra, durabilidad intermedia",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 19,
+  "itmName" : "Pico de Hierro",
+  "itmDesc" : "Pico de hierro, durabilidad alta",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 20,
+  "itmName" : "Caña de Pescar",
+  "itmDesc" : "Herramienta para pescar",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 21,
+  "itmName" : "Libro Encantado",
+  "itmDesc" : "Libro con encantamiento especial",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 22,
+  "itmName" : "Libro Escrito",
+  "itmDesc" : "Libro escrito por un jugador",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 23,
+  "itmName" : "Libro Normal",
+  "itmDesc" : "Libro sin ningún encantamiento",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 24,
+  "itmName" : "Libro Encantado",
+  "itmDesc" : "Libro con encantamiento de eficiencia",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 25,
+  "itmName" : "Libro Encantado",
+  "itmDesc" : "Libro con encantamiento de toques de seda",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 26,
+  "itmName" : "Libro Encantado",
+  "itmDesc" : "Libro con encantamiento de afinidad acuática",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 27,
+  "itmName" : "Libro Escrito",
+  "itmDesc" : "Libro escrito por Alex",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 28,
+  "itmName" : "Libro Encantado",
+  "itmDesc" : "Libro con encantamiento de inquebrantable",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 29,
+  "itmName" : "Libro Normal",
+  "itmDesc" : "Libro sin encantamientos",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 30,
+  "itmName" : "Libro Encantado",
+  "itmDesc" : "Libro con encantamiento de mending",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 31,
+  "itmName" : "Poción de Curación",
+  "itmDesc" : "Restaura salud al jugador",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 32,
+  "itmName" : "Poción de Velocidad",
+  "itmDesc" : "Aumenta la velocidad del jugador",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 33,
+  "itmName" : "Poción de Invisibilidad",
+  "itmDesc" : "Hace invisible al jugador",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 34,
+  "itmName" : "Poción de Resistencia al Fuego",
+  "itmDesc" : "Otorga inmunidad al daño por fuego",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 35,
+  "itmName" : "Poción de Fuerza",
+  "itmDesc" : "Aumenta el daño cuerpo a cuerpo",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 36,
+  "itmName" : "Poción de Lentitud",
+  "itmDesc" : "Reduce la velocidad del jugador",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 37,
+  "itmName" : "Poción de Regeneración",
+  "itmDesc" : "Recupera salud gradualmente",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 38,
+  "itmName" : "Poción de Salto",
+  "itmDesc" : "Incrementa el salto del jugador",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 39,
+  "itmName" : "Poción de Agua",
+  "itmDesc" : "No tiene efecto",
+  "itmImage" : null,
+  "itmStackSize" : 1
+}, {
+  "itmId" : 40,
+  "itmName" : "Poción de Resistencia a la Caída",
+  "itmDesc" : "Reduce el daño por caídas",
+  "itmImage" : null,
+  "itmStackSize" : 1
+} ]
