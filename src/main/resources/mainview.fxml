@@ -14,11 +14,11 @@
    <children>
       <TableView fx:id="tablaMain" layoutX="17.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
         <columns>
-          <TableColumn fx:id="clmID" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="clmDato1" prefWidth="75.0" text="DATO1" />
-            <TableColumn fx:id="clmDato2" prefWidth="75.0" text="DATO2" />
-            <TableColumn fx:id="clmDato3" prefWidth="75.0" text="DATO3" />
-            <TableColumn fx:id="clmDato4" prefWidth="75.0" text="DATO4" />
+          <TableColumn fx:id="clmID" prefWidth="83.0" text="ID" />
+          <TableColumn fx:id="clmDato1" prefWidth="120.0" text="DATO1" />
+            <TableColumn fx:id="clmDato2" prefWidth="315.0" text="DATO2" />
+            <TableColumn fx:id="clmDato3" prefWidth="146.0" text="DATO3" />
+            <TableColumn fx:id="clmDato4" prefWidth="125.0" text="DATO4" />
         </columns>
       </TableView>
       <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" text="Exportar" />
@@ -35,11 +35,11 @@
            </items>
        </ComboBox>
       <Button fx:id="btnBuscar" layoutX="414.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" text="🔎" />
-      <MenuButton fx:id="btnGroup" layoutX="496.0" layoutY="24.0" mnemonicParsing="false" text="Acción" >
+      <MenuButton fx:id="btnGroup" layoutX="496.0" layoutY="24.0" mnemonicParsing="false" text="Acción">
         <items>
-          <MenuItem mnemonicParsing="false" text="Añadir dato en item" onAction="#anadirDato"/>
-          <MenuItem mnemonicParsing="false" text="Borrar dato por id" onAction="#borrarDato"/>
-          <MenuItem mnemonicParsing="false" text="Asignar tipo a un item" onAction="#asignarItem"/>
+          <MenuItem mnemonicParsing="false" onAction="#anadirDato" text="Añadir dato en item" />
+          <MenuItem mnemonicParsing="false" onAction="#borrarDato" text="Borrar dato por id" />
+          <MenuItem mnemonicParsing="false" onAction="#asignarItem" text="Asignar tipo a un item" />
         </items>
       </MenuButton>
    </children>

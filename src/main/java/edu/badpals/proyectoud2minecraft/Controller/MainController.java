@@ -58,12 +58,6 @@ public class MainController {
     @FXML
     public void initialize() throws IOException {
 
-        clmID.setPrefWidth(100);
-        clmDato1.setPrefWidth(150);
-        clmDato2.setPrefWidth(300);
-        clmDato3.setPrefWidth(140);
-        clmDato4.setPrefWidth(100);
-
         setAndBindCellTitlesItem();
 
         cmbTabla.setValue("Items");
@@ -174,7 +168,6 @@ public class MainController {
         clmDato2.setCellValueFactory(new PropertyValueFactory<>("ItmDesc"));
         clmDato3.setCellValueFactory(new PropertyValueFactory<>("ItmStackSize"));
         clmDato4.setCellValueFactory(new PropertyValueFactory<>("ItmImage"));
-
 
     }
 
