@@ -165,15 +165,23 @@ public class MainController {
     @FXML
     public void filtrarDatos(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ordenarFiltrar.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Filtrar Items");
-            stage.setResizable(false);
-            stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-            actualizarTabla(event);
+            if (cmbTabla.getValue().equals("Items")) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ordenarFiltrar.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("Filtrar Items");
+                stage.setResizable(false);
+                stage.setScene(new Scene(root));
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.showAndWait();
+                actualizarTabla(event);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error al abrir la ventana filtrar");
+                alert.setContentText("La ventana filtrar solo se puede abrir en la table de items");
+                alert.showAndWait();
+            }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

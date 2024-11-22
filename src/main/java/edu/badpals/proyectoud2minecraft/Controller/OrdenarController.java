@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 public class OrdenarController {
 
@@ -37,6 +38,20 @@ public class OrdenarController {
 
     @FXML
     private RadioButton rbtnStack;
+
+    @FXML
+    private ToggleGroup toggleGroup;
+
+    @FXML
+    public void initialize() {
+        toggleGroup = new ToggleGroup();
+        rbtnId.setToggleGroup(toggleGroup);
+        rbtnDescrip.setToggleGroup(toggleGroup);
+        rbtnImagen.setToggleGroup(toggleGroup);
+        rbtnStack.setToggleGroup(toggleGroup);
+        rbtNombre.setToggleGroup(toggleGroup);
+    }
+
 
     @FXML
     void filtrar(ActionEvent event) {
