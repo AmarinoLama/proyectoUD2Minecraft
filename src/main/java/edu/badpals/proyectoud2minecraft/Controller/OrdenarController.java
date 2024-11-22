@@ -10,10 +10,7 @@ import javafx.scene.control.ToggleGroup;
 public class OrdenarController {
 
     @FXML
-    private Button btnFiltrar;
-
-    @FXML
-    private Button btnOrdenar;
+    private Button btnActualizar;
 
     @FXML
     private CheckBox cbxLetras;
@@ -43,24 +40,39 @@ public class OrdenarController {
     private ToggleGroup toggleGroup;
 
     @FXML
-    public void initialize() {
-        toggleGroup = new ToggleGroup();
-        rbtnId.setToggleGroup(toggleGroup);
-        rbtnDescrip.setToggleGroup(toggleGroup);
-        rbtnImagen.setToggleGroup(toggleGroup);
-        rbtnStack.setToggleGroup(toggleGroup);
-        rbtNombre.setToggleGroup(toggleGroup);
-    }
-
-
-    @FXML
-    void filtrar(ActionEvent event) {
-
-    }
-
-    @FXML
     void ordenar(ActionEvent event) {
+        String query = buildOrderQuery();
+        System.out.println(query);
+    }
 
+    private String buildOrderQuery() {
+        StringBuilder query = new StringBuilder("SELECT * FROM items");
+        query.append(" ORDER BY ");
+        if (rbtNombre.isSelected()) {
+            query.append("nombre");
+        } else if (rbtnDescrip.isSelected()) {
+            query.append("descripcion");
+        } else if (rbtnId.isSelected()) {
+            query.append("id");
+        } else if (rbtnImagen.isSelected()) {
+            query.append("imagen");
+        } else if (rbtnStack.isSelected()) {
+            query.append("stack");
+        }
+        if (cbxLetras.isSelected() | cbxPalabra.isSelected() | chbx64.isSelected()) {
+            if (chbx64.isSelected()) {
+                query.append(" WHERE stack >= 64");
+            }
+            if (cbxPalabra.isSelected()) {
+                //calentada
+                query.append(" WHERE stack >= 32 AND stack < 64");
+            }
+            if (cbxLetras.isSelected()) {
+                query.append(" WHERE LENGTH(descripcion) > 20");
+            }
+        }
+
+        return query.toString();
     }
 
 }
