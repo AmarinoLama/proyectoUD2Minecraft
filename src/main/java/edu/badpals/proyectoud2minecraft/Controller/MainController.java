@@ -1,6 +1,7 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
 import edu.badpals.proyectoud2minecraft.Model.*;
+import edu.badpals.proyectoud2minecraft.Model.Objetos.*;
 import edu.badpals.proyectoud2minecraft.View.Alertas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -66,7 +67,6 @@ public class MainController {
         setAndBindCellTitlesItem();
 
         cmbTabla.setValue("Items");
-
     }
 
     @FXML

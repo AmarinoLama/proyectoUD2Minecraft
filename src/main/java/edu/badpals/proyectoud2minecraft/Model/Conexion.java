@@ -1,9 +1,8 @@
 package edu.badpals.proyectoud2minecraft.Model;
 
+import edu.badpals.proyectoud2minecraft.Model.Objetos.*;
 import edu.badpals.proyectoud2minecraft.View.Alertas;
-import javafx.scene.control.Alert;
 
-import java.security.spec.ECField;
 import java.sql.*;
 
 import java.sql.DriverManager;

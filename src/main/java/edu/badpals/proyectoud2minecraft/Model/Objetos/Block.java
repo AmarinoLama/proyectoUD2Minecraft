@@ -1,4 +1,4 @@
-package edu.badpals.proyectoud2minecraft.Model;
+package edu.badpals.proyectoud2minecraft.Model.Objetos;
 
 public class Block {
 

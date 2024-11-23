@@ -9,5 +9,7 @@ module edu.badpals.proyectoud2minecraft {
     exports edu.badpals.proyectoud2minecraft.Controller;
     opens edu.badpals.proyectoud2minecraft.Controller to javafx.fxml;
     exports edu.badpals.proyectoud2minecraft.Model;
+    exports edu.badpals.proyectoud2minecraft.Model.Objetos;
+    opens edu.badpals.proyectoud2minecraft.Model.Objetos to javafx.base;
 
 }

@@ -2,6 +2,7 @@ package edu.badpals.proyectoud2minecraft.Controller;
 
 import edu.badpals.proyectoud2minecraft.Model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.badpals.proyectoud2minecraft.Model.Objetos.*;
 import edu.badpals.proyectoud2minecraft.View.Alertas;
 
 import java.io.File;

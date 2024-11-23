@@ -1,6 +1,6 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
-import edu.badpals.proyectoud2minecraft.Model.User;
+import edu.badpals.proyectoud2minecraft.Model.Objetos.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

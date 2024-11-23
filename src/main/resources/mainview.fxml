@@ -36,7 +36,7 @@
            </items>
        </ComboBox>
       <Button fx:id="btnBuscar" layoutX="522.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="🔎" textFill="#d0d0d0" />
-      <MenuButton fx:id="btnGroup" layoutX="588.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #e6fff5; -fx-border-color: #00331f; -fx-border-radius: 3;" text="Acción">
+      <MenuButton fx:id="btnGroup" layoutX="588.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #e6fff5; -fx-border-color: #00331f; -fx-border-radius: 3;" stylesheets="@styles.css" text="Acción">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#anadirDato" text="Añadir dato en item" />
           <MenuItem mnemonicParsing="false" onAction="#borrarDato" text="Borrar dato por id" />

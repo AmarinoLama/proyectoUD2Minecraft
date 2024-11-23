@@ -30,7 +30,7 @@
       <CheckBox fx:id="cbxPalabra" layoutX="295.0" layoutY="209.0" mnemonicParsing="false" text="Nombre con una palabra" />
       <ImageView fitHeight="74.0" fitWidth="341.0" layoutX="100.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pictures/GestionVistualizacion.png" />
+            <Image url="@pictures/visualizacionTablItems.png" />
          </image>
       </ImageView>
    </children>
