@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="tablaActual" prefHeight="293.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.ModificarItemController">
+<AnchorPane fx:id="tablaActual" prefHeight="293.0" prefWidth="512.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.ModificarItemController">
    <children>
-      <Button fx:id="btnCargar" layoutX="213.0" layoutY="74.0" mnemonicParsing="false" onAction="#cargarDatos" text="Cargar Datos" />
-      <Button fx:id="btnAceptar" layoutX="228.0" layoutY="242.0" mnemonicParsing="false" onAction="#modificarItem" text="Modificar" />
-      <TextField fx:id="txtDato1" layoutX="55.0" layoutY="148.0" prefHeight="25.0" prefWidth="186.0" />
-      <TextField fx:id="txtDato2" layoutX="55.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" />
-      <TextField fx:id="txtDato4" layoutX="314.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" />
-      <TextField fx:id="txtDato3" layoutX="314.0" layoutY="149.0" prefHeight="25.0" prefWidth="186.0" />
+      <Button fx:id="btnCargar" layoutX="213.0" layoutY="74.0" mnemonicParsing="false" onAction="#cargarDatos" style="-fx-background-color: #00804d; -fx-background-radius: 3; -fx-border-color: #00331f;" text="Cargar Datos" textFill="#d0d0d0" />
+      <Button fx:id="btnAceptar" layoutX="228.0" layoutY="242.0" mnemonicParsing="false" onAction="#modificarItem" style="-fx-border-color: #00331f; -fx-border-radius: 3; -fx-background-color: #00804d;" text="Modificar" textFill="#d0d0d0" />
+      <TextField fx:id="txtDato1" layoutX="55.0" layoutY="148.0" prefHeight="25.0" prefWidth="186.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
+      <TextField fx:id="txtDato2" layoutX="55.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" style="-fx-border-color: #00331f;" />
+      <TextField fx:id="txtDato4" layoutX="314.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
+      <TextField fx:id="txtDato3" layoutX="314.0" layoutY="149.0" prefHeight="25.0" prefWidth="186.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
       <Text layoutX="17.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato1:" wrappingWidth="57.0" />
       <Text layoutX="262.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato4:" wrappingWidth="75.6875" />
       <Text layoutX="261.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato3:" wrappingWidth="75.6875" />
       <Text layoutX="17.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato2:" wrappingWidth="66.0" />
-      <ComboBox fx:id="cmbTipoItem" layoutX="364.0" layoutY="29.0" onAction="#asignarTipo" prefHeight="25.0" prefWidth="125.0">
+      <ComboBox fx:id="cmbTipoItem" layoutX="364.0" layoutY="29.0" onAction="#asignarTipo" prefHeight="25.0" prefWidth="125.0" style="-fx-border-color: #00331f;">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Items" />
@@ -33,7 +33,7 @@
          </items>
       </ComboBox>
       <Text layoutX="17.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar el item con ID" />
-      <TextField fx:id="idItem" layoutX="152.0" layoutY="29.0" prefHeight="25.0" prefWidth="66.0" />
+      <TextField fx:id="idItem" layoutX="152.0" layoutY="29.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
       <Text layoutX="231.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="como un objeto de tipo" />
       <Separator layoutX="1.0" layoutY="120.0" prefHeight="4.0" prefWidth="511.0" />
    </children>

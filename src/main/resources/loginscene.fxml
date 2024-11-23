@@ -10,8 +10,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="304.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.ControllerLogin">
     <children>
-        <PasswordField fx:id="lblContrasena" layoutX="103.0" layoutY="190.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-border-color: #00331f;" />
-        <TextField fx:id="lblUsuario" layoutX="103.0" layoutY="144.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-border-color: #00331f;" />
+        <PasswordField fx:id="lblContrasena" layoutX="103.0" layoutY="190.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
+        <TextField fx:id="lblUsuario" layoutX="103.0" layoutY="144.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
         <ImageView fx:id="imgLogin" fitHeight="54.0" fitWidth="76.0" layoutX="210.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="259.0">
          <image>
             <Image url="@pictures/comandos.gif" />
