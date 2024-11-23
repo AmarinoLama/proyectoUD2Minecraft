@@ -11,20 +11,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="616.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="616.0" prefWidth="824.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.MainController">
    <children>
-      <TableView fx:id="tablaMain" layoutX="17.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0">
+      <TableView fx:id="tablaMain" layoutX="17.0" layoutY="92.0" prefHeight="495.0" prefWidth="790.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;">
         <columns>
           <TableColumn fx:id="clmID" prefWidth="83.0" text="ID" />
           <TableColumn fx:id="clmDato1" prefWidth="120.0" text="DATO1" />
             <TableColumn fx:id="clmDato2" prefWidth="315.0" text="DATO2" />
             <TableColumn fx:id="clmDato3" prefWidth="146.0" text="DATO3" />
-            <TableColumn fx:id="clmDato4" prefWidth="125.0" text="DATO4" />
+            <TableColumn fx:id="clmDato4" prefWidth="125.0" style="fx-background-color: #e6fff5;" text="DATO4" />
         </columns>
       </TableView>
-      <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" text="Exportar" />
-      <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" text="Salir" />
-       <ComboBox fx:id="cmbTabla" layoutX="349.0" layoutY="24.0" onAction="#actualizarTabla" prefWidth="150.0" promptText="Items">
+      <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="Exportar" textFill="#d0d0d0" />
+      <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="Salir" textFill="#d0d0d0" />
+       <ComboBox fx:id="cmbTabla" layoutX="349.0" layoutY="24.0" onAction="#actualizarTabla" prefWidth="150.0" promptText="Items" style="-fx-background-color: #e6fff5; -fx-border-radius: 3; -fx-border-color: #00331f;">
            <items>
                <FXCollections fx:factory="observableArrayList">
                    <String fx:value="Items" />
@@ -35,8 +35,8 @@
                </FXCollections>
            </items>
        </ComboBox>
-      <Button fx:id="btnBuscar" layoutX="506.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" text="🔎" />
-      <MenuButton fx:id="btnGroup" layoutX="588.0" layoutY="24.0" mnemonicParsing="false" text="Acción">
+      <Button fx:id="btnBuscar" layoutX="506.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="🔎" textFill="#d0d0d0" />
+      <MenuButton fx:id="btnGroup" layoutX="588.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #e6fff5; -fx-border-color: #00331f; -fx-border-radius: 3;" text="Acción">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#anadirDato" text="Añadir dato en item" />
           <MenuItem mnemonicParsing="false" onAction="#borrarDato" text="Borrar dato por id" />
@@ -44,6 +44,6 @@
           <MenuItem mnemonicParsing="false" onAction="#modificarItem" text="Modificar un dato" />
         </items>
       </MenuButton>
-      <TextField fx:id="txtRuta" layoutX="93.0" layoutY="24.0" prefHeight="25.0" prefWidth="210.0" promptText="Ruta del fichero JSON" />
+      <TextField fx:id="txtRuta" layoutX="93.0" layoutY="24.0" prefHeight="25.0" prefWidth="210.0" promptText="Ruta del fichero JSON" style="-fx-background-color: #e6fff5; -fx-border-color: #00331f;" />
    </children>
 </AnchorPane>
