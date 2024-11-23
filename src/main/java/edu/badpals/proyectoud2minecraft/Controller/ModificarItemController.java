@@ -1,6 +1,7 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
 import edu.badpals.proyectoud2minecraft.Model.Conexion;
+import edu.badpals.proyectoud2minecraft.View.Alertas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -74,11 +75,7 @@ public class ModificarItemController {
             txtDato3.setText(datos.get(3));
             txtDato4.setText(datos.get(4));
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error al cargar los datos");
-            alert.setContentText("No se pudo cargar los datos del objeto, comprueba la ID y la tabla seleccionada");
-            alert.showAndWait();
+            Alertas.errorCargarDatos();
         }
     }
 
@@ -92,17 +89,9 @@ public class ModificarItemController {
         String dato4 = txtDato4.getText();
         try {
             Conexion.modificarObjeto(tabla, id, dato1, dato2, dato3, dato4);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Información");
-            alert.setHeaderText("Objeto modificado");
-            alert.setContentText("El objeto ha sido modificado correctamente");
-            alert.showAndWait();
+            Alertas.infoObjetoModif();
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error al modificar el objeto");
-            alert.setContentText("No se pudo modificar el objeto, comprueba los datos introducidos");
-            alert.showAndWait();
+            Alertas.errorModifObjeto();
         }
     }
 

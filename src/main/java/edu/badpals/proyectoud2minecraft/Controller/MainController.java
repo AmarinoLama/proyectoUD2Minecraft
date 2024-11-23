@@ -1,6 +1,7 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
 import edu.badpals.proyectoud2minecraft.Model.*;
+import edu.badpals.proyectoud2minecraft.View.Alertas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -182,11 +183,7 @@ public class MainController {
                 stage.showAndWait();
                 actualizarTabla(event);
             } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error al abrir la ventana filtrar");
-                alert.setContentText("La ventana filtrar solo se puede abrir en la table de items");
-                alert.showAndWait();
+                Alertas.errorAbrirVentana();
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
