@@ -23,7 +23,7 @@
         </columns>
       </TableView>
       <Button fx:id="btnExportar" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#exportarJSON" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="Exportar" textFill="#d0d0d0" />
-      <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="Salir" />
+      <Button fx:id="btnSalir" layoutX="759.0" layoutY="24.0" mnemonicParsing="false" onAction="#salirPrograma" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="Salir" textFill="#d0d0d0" />
        <ComboBox fx:id="cmbTabla" layoutX="349.0" layoutY="24.0" onAction="#actualizarTabla" prefWidth="150.0" promptText="Items" style="-fx-background-color: #e6fff5; -fx-border-radius: 3; -fx-border-color: #00331f;">
            <items>
                <FXCollections fx:factory="observableArrayList">
@@ -35,7 +35,7 @@
                </FXCollections>
            </items>
        </ComboBox>
-      <Button fx:id="btnBuscar" layoutX="506.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="🔎" />
+      <Button fx:id="btnBuscar" layoutX="506.0" layoutY="24.0" mnemonicParsing="false" onAction="#filtrarDatos" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="🔎" textFill="#d0d0d0" />
       <MenuButton fx:id="btnGroup" layoutX="588.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #e6fff5; -fx-border-color: #00331f; -fx-border-radius: 3;" text="Acción">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#anadirDato" text="Añadir dato en item" />
