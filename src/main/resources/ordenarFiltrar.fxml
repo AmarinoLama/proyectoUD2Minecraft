@@ -4,21 +4,16 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<?import javafx.scene.control.ToggleGroup?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.OrdenarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="540.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.OrdenarController">
    <children>
-      <Separator layoutX="264.0" layoutY="70.0" orientation="VERTICAL" prefHeight="278.0" prefWidth="6.0" />
-      <Separator layoutY="64.0" prefHeight="14.0" prefWidth="590.0" />
-      <Text layoutX="17.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANEJO DE VISUALIZACIÓN DE DATOS DE LA TABLA ITEMS">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Text>
+      <Separator layoutX="264.0" layoutY="70.0" opacity="0.71" orientation="VERTICAL" prefHeight="278.0" prefWidth="6.0" />
+      <Separator layoutY="64.0" opacity="0.52" prefHeight="14.0" prefWidth="590.0" />
       <Text layoutX="17.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ordenar por:" />
       <RadioButton fx:id="rbtnId" layoutX="32.0" layoutY="136.0" mnemonicParsing="false" text="ID del item">
          <toggleGroup>
@@ -29,12 +24,16 @@
       <RadioButton fx:id="rbtnImagen" layoutX="32.0" layoutY="229.0" mnemonicParsing="false" text="URL imagen" toggleGroup="$toggleGroupOrdenar" />
       <RadioButton fx:id="rbtnStack" layoutX="141.0" layoutY="183.0" mnemonicParsing="false" text="Tamaño Stack" toggleGroup="$toggleGroupOrdenar" />
       <RadioButton fx:id="rbtNombre" layoutX="32.0" layoutY="183.0" mnemonicParsing="false" text="Nombre" toggleGroup="$toggleGroupOrdenar" />
-      <Button fx:id="btnOrdenar" layoutX="112.0" layoutY="281.0" mnemonicParsing="false" onAction="#ordenar" text="Ordenar" />
+      <Button fx:id="btnOrdenar" layoutX="112.0" layoutY="281.0" mnemonicParsing="false" onAction="#ordenar" style="-fx-background-color: #00804d; -fx-border-color: #00331f; -fx-border-radius: 3;" text="Ordenar" textFill="#d0d0d0" />
       <Text layoutX="283.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar datos:" />
       <CheckBox fx:id="chbx64" layoutX="295.0" layoutY="136.0" mnemonicParsing="false" text="Stack superior a 64" />
       <CheckBox fx:id="cbxLetras" layoutX="295.0" layoutY="175.0" mnemonicParsing="false" text="Más de 20 palabras en la descripción" />
       <CheckBox fx:id="cbxPalabra" layoutX="295.0" layoutY="209.0" mnemonicParsing="false" text="Nombre con una Palabra" />
-      <Button fx:id="btnFiltrar" layoutX="356.0" layoutY="281.0" mnemonicParsing="false" onAction="#filtrar" text="Filtrar" />
+      <Button fx:id="btnFiltrar" layoutX="356.0" layoutY="281.0" mnemonicParsing="false" onAction="#filtrar" style="-fx-background-color: #00804d; -fx-border-color: #00331f; -fx-border-radius: 3;" text="Filtrar" textFill="#d0d0d0" />
+      <ImageView fitHeight="53.0" fitWidth="378.0" layoutX="83.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/visualizacionTablItems.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
-
