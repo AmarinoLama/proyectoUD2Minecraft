@@ -1,11 +1,19 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
+import edu.badpals.proyectoud2minecraft.Main;
+import edu.badpals.proyectoud2minecraft.Model.Conexion;
+import edu.badpals.proyectoud2minecraft.Model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.util.List;
 
 public class OrdenarController {
 
@@ -42,37 +50,42 @@ public class OrdenarController {
     @FXML
     void ordenar(ActionEvent event) {
         String query = buildOrderQuery();
-        System.out.println(query);
+        MainController.queryItemsFiltrados = query;
+        ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
     }
 
     private String buildOrderQuery() {
         StringBuilder query = new StringBuilder("SELECT * FROM items");
-        query.append(" ORDER BY ");
-        if (rbtNombre.isSelected()) {
-            query.append("nombre");
-        } else if (rbtnDescrip.isSelected()) {
-            query.append("descripcion");
-        } else if (rbtnId.isSelected()) {
-            query.append("id");
-        } else if (rbtnImagen.isSelected()) {
-            query.append("imagen");
-        } else if (rbtnStack.isSelected()) {
-            query.append("stack");
-        }
+        boolean hasCondition = false;
         if (cbxLetras.isSelected() | cbxPalabra.isSelected() | chbx64.isSelected()) {
+            query.append(" WHERE ");
             if (chbx64.isSelected()) {
-                query.append(" WHERE stack >= 64");
+                query.append("ItmStackSize >= 64");
+                hasCondition = true;
             }
             if (cbxPalabra.isSelected()) {
-                //calentada
-                query.append(" WHERE stack >= 32 AND stack < 64");
+                if (hasCondition) query.append(" AND ");
+                query.append("LENGTH(ItmName) - LENGTH(REPLACE(ItmName, ' ', '')) + 1 = 1");
+                hasCondition = true;
             }
             if (cbxLetras.isSelected()) {
-                query.append(" WHERE LENGTH(descripcion) > 20");
+                if (hasCondition) query.append(" AND ");
+                query.append("LENGTH(ItmDesc) > 30");
             }
+        }
+        query.append(" ORDER BY ");
+        if (rbtNombre.isSelected()) {
+            query.append("ItmName");
+        } else if (rbtnDescrip.isSelected()) {
+            query.append("ItmDesc");
+        } else if (rbtnId.isSelected()) {
+            query.append("ItmId");
+        } else if (rbtnImagen.isSelected()) {
+            query.append("ItmImage");
+        } else if (rbtnStack.isSelected()) {
+            query.append("ItmStackSize");
         }
 
         return query.toString();
     }
-
 }

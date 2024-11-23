@@ -53,6 +53,8 @@ public class MainController {
     @FXML
     private TextField txtRuta;
 
+    protected static String queryItemsFiltrados = "";
+
     @FXML
     void exportarJSON(ActionEvent event) {
         ExportarDatos.exportarAJSON(cmbTabla.getValue(), txtRuta.getText());
@@ -68,13 +70,17 @@ public class MainController {
     }
 
     @FXML
-    void actualizarTabla(ActionEvent event) {
+    public void actualizarTabla(ActionEvent event) {
 
         String seleccion = cmbTabla.getValue();
         tablaMain.getItems().clear();
         switch (seleccion) {
             case "Items":
-                setAndBindCellTitlesItem();
+                if (queryItemsFiltrados.equals("")) {
+                    setAndBindCellTitlesItem();
+                } else {
+                    setItemsFiltrados(queryItemsFiltrados);
+                }
                 break;
             case "Books":
                 setAndBindCellTitlesBook();
@@ -195,6 +201,25 @@ public class MainController {
     private void setAndBindCellTitlesItem() {
 
         List<Item> itemsActuales = Conexion.cargarItems();
+        tablaMain.getItems().addAll(itemsActuales);
+
+        clmID.setText("ID");
+        clmDato1.setText("Nombre");
+        clmDato2.setText("Descripción");
+        clmDato3.setText("Tamaño Stack");
+        clmDato4.setText("Imagen");
+
+        clmID.setCellValueFactory(new PropertyValueFactory<>("ItmId"));
+        clmDato1.setCellValueFactory(new PropertyValueFactory<>("ItmName"));
+        clmDato2.setCellValueFactory(new PropertyValueFactory<>("ItmDesc"));
+        clmDato3.setCellValueFactory(new PropertyValueFactory<>("ItmStackSize"));
+        clmDato4.setCellValueFactory(new PropertyValueFactory<>("ItmImage"));
+
+    }
+
+    private void setItemsFiltrados(String query) {
+
+        List<Item> itemsActuales = Conexion.cargarItemsFiltrados(query);
         tablaMain.getItems().addAll(itemsActuales);
 
         clmID.setText("ID");

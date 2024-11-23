@@ -181,7 +181,3 @@ INSERT INTO POTIONS (PotId, PotName, PotEffect, PotDuration, PotLevel) VALUES
 (38, 'Poción de Salto', 'Incrementa el salto', 90, 1),
 (39, 'Poción de Agua', 'No tiene efecto', 0, 0),
 (40, 'Poción de Resistencia a la Caída', 'Reduce el daño por caídas', 0, 0);
-
-
-                            
-

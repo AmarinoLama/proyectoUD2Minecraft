@@ -57,6 +57,33 @@ public class Conexion {
 
     }
 
+    public static List<Item> cargarItemsFiltrados(String query) {
+
+        try (PreparedStatement pstmt = connectDB().prepareStatement(query)) {
+
+            List<Item> listaItems = new ArrayList<>();
+
+            ResultSet resultado = pstmt.executeQuery();
+
+            while (resultado.next()) {
+                int ItmId = resultado.getInt("ItmId");
+                String ItmName = resultado.getString("ItmName");
+                String ItmDesc = resultado.getString("ItmDesc");
+                Integer ItmStackSize = resultado.getInt("ItmStackSize");
+                String ItmImage = resultado.getString("ItmImage");
+
+                Item itemActual = new Item(ItmId, ItmName, ItmDesc, ItmStackSize, ItmImage);
+                listaItems.add(itemActual);
+
+            }
+            return listaItems;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
     public static List<Book> cargarBooks() {
 
         String sqQuery = "SELECT * FROM Books";

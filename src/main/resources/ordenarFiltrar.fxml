@@ -30,7 +30,7 @@
       <Button fx:id="btnActualizar" layoutX="216.0" layoutY="285.0" mnemonicParsing="false" onAction="#ordenar" text="Actualizar Tabla" />
       <Text layoutX="283.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar datos:" />
       <CheckBox fx:id="chbx64" layoutX="295.0" layoutY="136.0" mnemonicParsing="false" text="Stack superior a 64" />
-      <CheckBox fx:id="cbxLetras" layoutX="295.0" layoutY="175.0" mnemonicParsing="false" text="Más de 20 letras en la descripción" />
+      <CheckBox fx:id="cbxLetras" layoutX="295.0" layoutY="175.0" mnemonicParsing="false" text="Más de 30 letras en la descripción" />
       <CheckBox fx:id="cbxPalabra" layoutX="295.0" layoutY="209.0" mnemonicParsing="false" text="Nombre con una palabra" />
    </children>
 </AnchorPane>
