@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="241.0" prefWidth="521.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.AsignarItemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="241.0" prefWidth="521.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.AsignarItemController">
    <children>
-      <ComboBox fx:id="cmbTipoItem" layoutX="365.0" layoutY="24.0" onAction="#asignarTipo" prefHeight="25.0" prefWidth="125.0" style="-fx-border-color: #00331f; -fx-border-radius: 3;">
+      <ComboBox fx:id="cmbTipoItem" layoutX="378.0" layoutY="25.0" onAction="#asignarTipo" prefHeight="25.0" prefWidth="125.0" style="-fx-border-color: #00331f; -fx-border-radius: 3;">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Blocks" />
@@ -21,9 +21,9 @@
             </FXCollections>
          </items>
       </ComboBox>
-      <Text layoutX="27.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asignar el item con ID" />
+      <Text layoutX="12.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asignar el item con ID" wrappingWidth="136.9443359375" />
       <TextField fx:id="idItem" layoutX="153.0" layoutY="24.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
-      <Text layoutX="233.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Como un objeto de tipo" />
+      <Text layoutX="226.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="como un objeto de tipo" />
       <Button fx:id="btnAceptar" layoutX="232.0" layoutY="197.0" mnemonicParsing="false" onAction="#asignarItem" style="-fx-border-color: #00331f; -fx-background-color: #00804d; -fx-border-radius: 3;" text="Aceptar" textFill="#d0d0d0" />
       <TextField fx:id="txtDato1" layoutX="55.0" layoutY="98.0" prefHeight="25.0" prefWidth="177.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
       <TextField fx:id="txtDato2" layoutX="55.0" layoutY="141.0" prefHeight="25.0" prefWidth="177.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />

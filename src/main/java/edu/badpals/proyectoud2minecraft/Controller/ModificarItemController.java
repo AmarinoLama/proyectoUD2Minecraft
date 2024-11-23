@@ -88,8 +88,12 @@ public class ModificarItemController {
         String dato3 = txtDato3.getText();
         String dato4 = txtDato4.getText();
         try {
-            Conexion.modificarObjeto(tabla, id, dato1, dato2, dato3, dato4);
-            Alertas.infoObjetoModif();
+            if(Conexion.modificarObjeto(tabla, id, dato1, dato2, dato3, dato4) != 0) {
+                Alertas.infoObjetoModif();
+            } else {
+                Alertas.errorModifObjeto();
+            }
+
         } catch (Exception e) {
             Alertas.errorModifObjeto();
         }

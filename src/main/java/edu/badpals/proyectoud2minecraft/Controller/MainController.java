@@ -5,7 +5,6 @@ import edu.badpals.proyectoud2minecraft.View.Alertas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -96,7 +95,7 @@ public class MainController {
                 setAndBindCellTitlesTool();
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + seleccion);
+                Alertas.errorCargarTabla();
         }
 
     }
@@ -114,7 +113,7 @@ public class MainController {
             stage.showAndWait();
             actualizarTabla(event);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Alertas.errorAnadirDatos();
         }
     }
 
@@ -131,7 +130,7 @@ public class MainController {
             stage.showAndWait();
             actualizarTabla(event);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Alertas.errorBorrarDatos();
         }
     }
 
@@ -148,7 +147,7 @@ public class MainController {
             stage.showAndWait();
             actualizarTabla(event);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Alertas.errorAsignarDatosItem();
         }
     }
 
@@ -165,7 +164,7 @@ public class MainController {
             stage.showAndWait();
             actualizarTabla(event);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            Alertas.errorModifObjeto();
         }
     }
 
@@ -186,7 +185,7 @@ public class MainController {
                 Alertas.errorAbrirVentana();
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            Alertas.errorAbrirVentanaCatch();
         }
     }
 

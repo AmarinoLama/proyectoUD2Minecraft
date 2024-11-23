@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import edu.badpals.proyectoud2minecraft.View.Alertas;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -91,16 +91,12 @@ public class ControllerLogin {
     private static Connection connectDB() {
 
         try {
-
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbdd_credentials", "root", "root");
             return conexion;
-
         } catch (SQLException e) {
-
-            System.out.println(e.getMessage());
+            Alertas.noConexionBBDDUsers();
             return null;
         }
-
     }
 
 
@@ -121,7 +117,7 @@ public class ControllerLogin {
             return sb.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            System.out.println(e.getMessage());
+            Alertas.errorHasher();
         }
 
         return null;
@@ -149,7 +145,7 @@ public class ControllerLogin {
             }
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorGetUsers();
             return null;
         }
     }
@@ -188,7 +184,8 @@ public class ControllerLogin {
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            Alertas.errorValidacion();
+            return false;
         }
 
     }

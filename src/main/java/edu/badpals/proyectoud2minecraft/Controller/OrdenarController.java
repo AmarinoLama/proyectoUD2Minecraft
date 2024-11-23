@@ -1,8 +1,5 @@
 package edu.badpals.proyectoud2minecraft.Controller;
 
-import edu.badpals.proyectoud2minecraft.Main;
-import edu.badpals.proyectoud2minecraft.Model.Conexion;
-import edu.badpals.proyectoud2minecraft.Model.Item;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -10,10 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
-import java.util.List;
 
 public class OrdenarController {
 

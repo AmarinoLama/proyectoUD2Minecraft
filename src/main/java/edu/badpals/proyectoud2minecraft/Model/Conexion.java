@@ -1,5 +1,6 @@
 package edu.badpals.proyectoud2minecraft.Model;
 
+import edu.badpals.proyectoud2minecraft.View.Alertas;
 import javafx.scene.control.Alert;
 
 import java.security.spec.ECField;
@@ -12,27 +13,31 @@ import java.util.List;
 
 public class Conexion {
 
+    private static Connection conexion;
 
-    private static Connection connectDB() {
-
+    private static Connection abrirConexion() {
         try {
-
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbddr_minecraft", "root", "root");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbddr_minecraft", "root", "root");
             return conexion;
-
         } catch (SQLException e) {
-
-            System.out.println(e.getMessage());
+            Alertas.errorConexionBBDDMc();
             return null;
         }
+    }
 
+    private static void cerrarConexion() {
+        try {
+            conexion.close();
+        } catch (SQLException e) {
+            Alertas.errorCerrarConexion();
+        }
     }
 
     public static List<Item> cargarItems() {
 
         String sqQuery = "SELECT * FROM items";
-
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        abrirConexion();
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
             List<Item> listaItems = new ArrayList<>();
 
@@ -49,9 +54,12 @@ public class Conexion {
                 listaItems.add(itemActual);
 
             }
+            resultado.close();
+            cerrarConexion();
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorCargarTabla();
+            cerrarConexion();
             return null;
         }
 
@@ -59,7 +67,8 @@ public class Conexion {
 
     public static List<Item> cargarItemsFiltrados(String query) {
 
-        try (PreparedStatement pstmt = connectDB().prepareStatement(query)) {
+        abrirConexion();
+        try (PreparedStatement pstmt = conexion.prepareStatement(query)) {
 
             List<Item> listaItems = new ArrayList<>();
 
@@ -76,9 +85,12 @@ public class Conexion {
                 listaItems.add(itemActual);
 
             }
+            resultado.close();
+            cerrarConexion();
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorCargarTabla();
+            cerrarConexion();
             return null;
         }
 
@@ -87,8 +99,8 @@ public class Conexion {
     public static List<Book> cargarBooks() {
 
         String sqQuery = "SELECT * FROM Books";
-
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        abrirConexion();
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
             List<Book> listaItems = new ArrayList<>();
 
@@ -103,7 +115,6 @@ public class Conexion {
                 if (BkEnchantment == null) {
                     BkEnchantment = "Mundano";
                 }
-                ;
 
                 Integer BkLevel = resultado.getInt("BkLevel");
 
@@ -111,9 +122,12 @@ public class Conexion {
                 listaItems.add(itemActual);
 
             }
+            resultado.close();
+            cerrarConexion();
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorCargarTabla();
+            cerrarConexion();
             return null;
         }
     }
@@ -121,8 +135,9 @@ public class Conexion {
     public static List<Potion> cargarPots() {
 
         String sqQuery = "SELECT * FROM Potions";
+        abrirConexion();
 
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
             List<Potion> listaItems = new ArrayList<>();
 
@@ -139,9 +154,12 @@ public class Conexion {
                 listaItems.add(itemActual);
 
             }
+            resultado.close();
+            cerrarConexion();
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorCargarTabla();
+            cerrarConexion();
             return null;
         }
 
@@ -150,8 +168,9 @@ public class Conexion {
     public static List<Block> cargarBlocks() {
 
         String sqQuery = "SELECT * FROM Blocks";
+        abrirConexion();
 
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
             List<Block> listaItems = new ArrayList<>();
 
@@ -168,9 +187,12 @@ public class Conexion {
                 listaItems.add(itemActual);
 
             }
+            resultado.close();
+            cerrarConexion();
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorCargarTabla();
+            cerrarConexion();
             return null;
         }
 
@@ -179,8 +201,9 @@ public class Conexion {
     public static List<Tool> cargarTools() {
 
         String sqQuery = "SELECT * FROM tools";
+        abrirConexion();
 
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
             List<Tool> listaItems = new ArrayList<>();
 
@@ -197,9 +220,12 @@ public class Conexion {
                 listaItems.add(itemActual);
 
             }
+            resultado.close();
+            cerrarConexion();
             return listaItems;
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorCargarTabla();
+            cerrarConexion();
             return null;
         }
 
@@ -208,8 +234,9 @@ public class Conexion {
     public static int insertarDatos(String tabla, String dato1, String dato2, String dato3, String dato4) {
 
         String sqQuery = "INSERT INTO " + tabla + " VALUES (null, ?, ?, ?, ?)";
+        abrirConexion();
 
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
             pstmt.setString(1, dato1);
             pstmt.setString(2, dato2);
@@ -217,72 +244,51 @@ public class Conexion {
             pstmt.setString(4, dato4);
 
             int rowsAffected = pstmt.executeUpdate();
+            pstmt.close();
+            cerrarConexion();
             return rowsAffected;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            cerrarConexion();
             return 0;
         }
     }
-
-    public static int modificarDatos(String text, String text1, String text2, String text3, String text4, String text5) {
-
-        String sqQuery = "UPDATE " + text + " SET BkName = ?, BkType = ?, BkEnchantment = ?, BkLevel = ? WHERE BkId = ?";
-
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
-
-            pstmt.setString(1, text2);
-            pstmt.setString(2, text3);
-            pstmt.setString(3, text4);
-            pstmt.setString(4, text5);
-            pstmt.setString(5, text1);
-
-            int rowsAffected = pstmt.executeUpdate();
-            return rowsAffected;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
-
-    /*
-            todo poner los mensajes de alerta en view
-     */
 
     public static int borrarDatos(String text) {
 
-            String sqQuery = "DELETE FROM Items WHERE ItmId = ?";
+        String sqQuery = "DELETE FROM Items WHERE ItmId = ?";
+        abrirConexion();
 
-            try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
 
-                pstmt.setString(1, text);
+            pstmt.setString(1, text);
 
-                int rowsAffected = pstmt.executeUpdate();
+            int rowsAffected = pstmt.executeUpdate();
+            pstmt.close();
+            cerrarConexion();
+            return rowsAffected;
 
-                return rowsAffected;
-
-            } catch (SQLException e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error al borrar");
-                alert.setContentText("El campo de ID no puede estar vacío");
-                alert.showAndWait();
-                return 0;
-            }
+        } catch (SQLException e) {
+            Alertas.errorBorrarIdVacio();
+            cerrarConexion();
+            return 0;
+        }
     }
 
     public static List<String> obtenerColumnasTabla(String tabla) {
         List<String> columnas = new ArrayList<>();
-        try (Connection conexion = connectDB()) {
+        abrirConexion();
+        try {
             DatabaseMetaData metaData = conexion.getMetaData();
             ResultSet rs = metaData.getColumns("bbddr_minecraft", null, tabla, null);
             while (rs.next()) {
                 String columna = rs.getString("COLUMN_NAME");
                 columnas.add(columna);
             }
+            rs.close();
+            cerrarConexion();
         } catch (SQLException e) {
-            e.printStackTrace();
+            Alertas.errorObtenerColumnas();
         }
         return columnas;
     }
@@ -290,21 +296,16 @@ public class Conexion {
     public static void asignarItem(String idItem, String tabla, String text1, String text2, String text3, String text4) {
 
         String query = "INSERT INTO " + tabla + " VALUES ('" + idItem + "', '" + text1 + "', '" + text2 + "', '" + text3 + "', '" + text4 + "')";
-
+        abrirConexion();
         try {
-            Statement stmt = connectDB().createStatement();
+            Statement stmt = conexion.createStatement();
             stmt.executeUpdate(query);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Información");
-            alert.setHeaderText("Asignación exitosa");
-            alert.setContentText("El dato ha sido asignado correctamente");
-            alert.showAndWait();
+            Alertas.infoAsignacionCorrecta();
+            stmt.close();
+            cerrarConexion();
         } catch (SQLException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error al asignar");
-            alert.setContentText("El dato no ha podido ser asignado");
-            alert.showAndWait();
+            Alertas.errorAsignacion();
+            cerrarConexion();
         }
     }
 
@@ -312,7 +313,8 @@ public class Conexion {
         List<String> datosTabla = obtenerColumnasTabla(tabla);
         String sqQuery = "SELECT * FROM " + tabla + " WHERE " + datosTabla.get(0) + " = " + id;
         List<String> datos = new ArrayList<>();
-        try (Statement stmt = connectDB().createStatement()) {
+        abrirConexion();
+        try (Statement stmt = conexion.createStatement()) {
             ResultSet resultado = stmt.executeQuery(sqQuery);
             ResultSetMetaData rsmd = resultado.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
@@ -321,25 +323,32 @@ public class Conexion {
                     datos.add(resultado.getString(i));
                 }
             }
+            resultado.close();
+            cerrarConexion();
         } catch (SQLException e) {
+            cerrarConexion();
             return null;
         }
         return datos;
     }
 
-    public static void modificarObjeto(String tabla, String id, String dato1, String dato2, String dato3, String dato4) {
+    public static int modificarObjeto(String tabla, String id, String dato1, String dato2, String dato3, String dato4) {
         List<String> datosTabla = obtenerColumnasTabla(tabla);
         String sqQuery = "UPDATE " + tabla + " SET " + datosTabla.get(1) + " = ?, " + datosTabla.get(2) + " = ?, " + datosTabla.get(3) + " = ?, " + datosTabla.get(4) + " = ? WHERE " + datosTabla.get(0) + " = ?";
-        try (PreparedStatement pstmt = connectDB().prepareStatement(sqQuery)) {
+        abrirConexion();
+        try (PreparedStatement pstmt = conexion.prepareStatement(sqQuery)) {
             pstmt.setString(1, dato1);
             pstmt.setString(2, dato2);
             pstmt.setString(3, dato3);
             pstmt.setString(4, dato4);
             pstmt.setString(5, id);
-            pstmt.executeUpdate();
+            int rowsAffected = pstmt.executeUpdate();
+            pstmt.close();
+            cerrarConexion();
+            return rowsAffected;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            cerrarConexion();
+            return 0;
         }
     }
 }
-

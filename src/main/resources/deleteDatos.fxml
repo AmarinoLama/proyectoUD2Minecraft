@@ -6,9 +6,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="132.0" prefWidth="210.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.DeleteDatosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="132.0" prefWidth="210.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="edu.badpals.proyectoud2minecraft.Controller.DeleteDatosController">
    <children>
-      <TextField fx:id="idBorrar" layoutX="22.0" layoutY="83.0" prefHeight="25.0" prefWidth="103.0" promptText="ID" style="-fx-background-color: # e6fff5; -fx-border-color: #00331f;" styleClass="r" />
+      <TextField fx:id="idBorrar" layoutX="22.0" layoutY="83.0" prefHeight="25.0" prefWidth="103.0" promptText="ID" style="-fx-background-color: #e6fff5; -fx-border-color: #00331f;" styleClass="r" />
       <Button fx:id="btnBorrar" layoutX="131.0" layoutY="83.0" mnemonicParsing="false" onAction="#borrarPorId" style="-fx-background-color: #00804d; -fx-border-radius: 3; -fx-border-color: #00331f;" text="Borrar" textFill="#d0d0d0" />
       <ImageView fitHeight="35.0" fitWidth="190.0" layoutX="10.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,7 +17,7 @@
       </ImageView>
       <ImageView fitHeight="35.0" fitWidth="190.0" layoutX="34.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pictures/Borrar.png" />
+            <Image url="@pictures/borrar.png" />
          </image>
       </ImageView>
    </children>

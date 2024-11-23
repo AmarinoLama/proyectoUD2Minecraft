@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="258.0" prefWidth="427.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.AnadirDatosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="258.0" prefWidth="427.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.AnadirDatosController">
    <Button fx:id="btnActualizar" layoutX="154.0" layoutY="207.0" mnemonicParsing="false" onAction="#insertarItem" prefHeight="25.0" prefWidth="119.0" style="-fx-border-color: #00331f; -fx-background-color: #00804d; -fx-border-radius: 3;" text="Añadir Dato" textFill="#d0d0d0" />
    <TextField fx:id="txtDat1" layoutX="87.0" layoutY="67.0" prefHeight="25.0" prefWidth="119.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
-   <TextField fx:id="txtDat2" layoutX="90.0" layoutY="163.0" prefHeight="25.0" prefWidth="313.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
-   <TextField fx:id="txtDat4" layoutX="90.0" layoutY="117.0" prefHeight="25.0" prefWidth="313.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
+   <TextField fx:id="txtDat2" layoutX="100.0" layoutY="163.0" prefHeight="31.0" prefWidth="303.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
+   <TextField fx:id="txtDat4" layoutX="100.0" layoutY="117.0" prefHeight="31.0" prefWidth="303.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
    <TextField fx:id="txtDat3" layoutX="280.0" layoutY="67.0" prefHeight="25.0" prefWidth="119.0" style="-fx-border-color: #00331f; -fx-background-color: #e6fff5;" />
    <Text layoutX="23.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" />
    <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción:" />
-   <Text layoutX="242.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stack:" />
+   <Text layoutX="232.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stack:" />
    <Text layoutX="13.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL Imagen:" />
    <Text fx:id="txtTabla" layoutX="160.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="65.0" />
    <ImageView fitHeight="42.0" fitWidth="349.0" layoutX="114.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">

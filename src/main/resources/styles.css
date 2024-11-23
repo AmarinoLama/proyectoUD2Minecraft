@@ -1,0 +1,56 @@
+/* Fondo principal de la aplicación */
+.root {
+    -fx-background-color: #2c3e50; /* Gris oscuro elegante */
+    -fx-border-color: #34495e;    /* Borde ligeramente más claro */
+    -fx-border-width: 4;          /* Borde delgado */
+}
+
+/* Estilo para todos los botones */
+.button {
+    -fx-background-color: #27ae60; /* Verde suave */
+    -fx-border-color: #1e8449;     /* Verde oscuro para el borde */
+    -fx-border-width: 2;           /* Borde fino */
+    -fx-border-radius: 5;          /* Esquinas ligeramente redondeadas */
+    -fx-background-radius: 5;      /* Redondeo del fondo */
+    -fx-text-fill: #ffffff;        /* Texto blanco */
+    -fx-font-family: Arial, sans-serif; /* Fuente limpia y universal */
+    -fx-font-size: 14px;           /* Tamaño del texto adecuado */
+    -fx-font-weight: bold;         /* Texto en negrita */
+    -fx-cursor: hand;              /* Cursor interactivo */
+}
+
+/* Hover en los botones */
+.button:hover {
+    -fx-background-color: #2ecc71; /* Verde más claro al pasar el mouse */
+}
+
+/* Estilo para todos los campos de texto */
+.text-field {
+    -fx-background-color: #ecf0f1; /* Blanco limpio */
+    -fx-border-color: #bdc3c7;     /* Gris claro para el borde */
+    -fx-border-width: 1.5;         /* Borde sutil */
+    -fx-text-fill: #2c3e50;        /* Texto gris oscuro */
+    -fx-font-family: Arial, sans-serif; /* Fuente limpia */
+    -fx-font-size: 12px;           /* Tamaño del texto moderado */
+    -fx-padding: 5;                /* Espaciado interno */
+    -fx-background-radius: 3;      /* Bordes ligeramente redondeados */
+    -fx-border-radius: 3;          /* Esquinas redondeadas */
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;    /* Azul claro al enfocar */
+    -fx-background-color: #ffffff; /* Blanco más puro */
+}
+
+/* Estilo para todos los textos */
+Text {
+    -fx-fill: #ecf0f1;             /* Texto blanco suave */
+    -fx-font-family: Arial, sans-serif; /* Fuente simple */
+    -fx-font-size: 14px;           /* Tamaño del texto claro */
+    -fx-font-weight: normal;       /* Texto sin negrita */
+}
+
+/* Imagen decorativa */
+.image-view {
+    -fx-effect: dropshadow(gaussian, black, 5, 0.5, 0, 0); /* Sombra sutil */
+}
