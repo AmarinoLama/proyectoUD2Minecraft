@@ -31,6 +31,11 @@ public class AsignarItemController {
     private TextField txtDato4;
 
     @FXML
+    public void initialize() {
+        idItem.setPromptText("ID");
+    }
+
+    @FXML
     void asignarItem(ActionEvent event) {
         Conexion.asignarItem(idItem.getText(), cmbTipoItem.getValue(), txtDato1.getText(), txtDato2.getText(), txtDato3.getText(), txtDato4.getText());
     }

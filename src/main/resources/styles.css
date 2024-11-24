@@ -145,3 +145,83 @@
     -fx-background-color: #ffffff; /* Fondo blanco al hacer foco */
     -fx-text-fill: #00663d; /* Color de texto verde más oscuro */
 }
+
+/* Estilo para los RadioButton */
+.radio-button {
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-font-weight: bold; /* Fuente en negrita */
+    -fx-text-fill: #585858; /* Color de texto gris oscuro */
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-padding: 5px; /* Relleno alrededor del texto */
+}
+
+/* Estilo para el RadioButton cuando está seleccionado */
+.radio-button:selected {
+    -fx-text-fill: #00663d; /* Cambiar color a verde oscuro cuando está seleccionado */
+}
+
+/* Efecto cuando el cursor está encima del RadioButton */
+.radio-button:hover {
+    -fx-text-fill: #00804d; /* Cambiar color a verde claro en hover */
+}
+
+/* Estilo para el radio button cuando está marcado */
+.radio-button .radio-button-focused {
+    -fx-border-color: #00804d; /* Borde verde claro al estar enfocado */
+    -fx-border-width: 2px; /* Ancho del borde */
+}
+
+/* Estilo del círculo del RadioButton */
+.radio-button .radio-button .left {
+    -fx-background-color: #00804d; /* Color verde para el círculo */
+    -fx-border-color: #00331f; /* Borde verde oscuro */
+    -fx-border-radius: 50%; /* Círculo completamente redondeado */
+}
+
+/* Estilo cuando el RadioButton está seleccionado */
+.radio-button:selected .left {
+    -fx-background-color: #00663d; /* Verde oscuro cuando está seleccionado */
+}
+
+
+/* Estilo general para los CheckBox */
+.check-box {
+    -fx-font-size: 14px; /* Tamaño de fuente */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-text-fill: #585858; /* Color de texto gris oscuro */
+    -fx-padding: 5px; /* Espaciado entre el texto y el borde */
+    -fx-background-color: transparent; /* Fondo transparente */
+}
+
+/* Estilo para el cuadro del CheckBox */
+.check-box .box {
+    -fx-border-color: #00804d; /* Borde verde */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-border-radius: 3px; /* Bordes ligeramente redondeados */
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-pref-width: 16px; /* Ancho del cuadro */
+    -fx-pref-height: 16px; /* Altura del cuadro */
+}
+
+/* Estilo cuando el CheckBox está seleccionado */
+.check-box:selected .box {
+    -fx-background-color: #00804d; /* Fondo verde claro cuando está marcado */
+    -fx-border-color: #00663d; /* Borde verde oscuro */
+}
+
+/* Estilo para la marca dentro del CheckBox */
+.check-box:selected .box .mark {
+    -fx-background-color: #ffffff; /* Marca blanca */
+    -fx-shape: "M 0 2 L 2 4 L 6 -1"; /* Forma de marca (check) */
+}
+
+/* Efecto hover al pasar el cursor */
+.check-box:hover .box {
+    -fx-border-color: #00663d; /* Borde verde oscuro en hover */
+}
+
+/* Estilo cuando el CheckBox está enfocado */
+.check-box:focused .box {
+    -fx-border-color: #004d2e; /* Borde verde más oscuro cuando está enfocado */
+    -fx-border-width: 3px; /* Ancho de borde más grande para destacar */
+}
