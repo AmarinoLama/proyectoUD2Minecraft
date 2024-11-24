@@ -4,7 +4,7 @@ Base de datos sobre objetos del juego Minecraft. Se ha usado como ejemplo para l
 
 La base de datos se ha diseñado teniendo en mente el uso de un esquema de especializacion, o "Es un". Dónde un item puede ser un libro, una herramienta, una poción o un bloque.
 
-[INSERTAR AQUI EL DIAGRAMA]
+![diagrama1.png](src%2Fmain%2Fresources%2Fimagenes%2Fdiagrama1.png)
 
 Las propiedades de las tablas son las siguientes:
 
@@ -42,6 +42,8 @@ Las propiedades de las tablas son las siguientes:
 - PotEffect TEXT NOT NULL
 - PotDuration INT NOT NULL
 - PotLevel TINYINT NOT NULL
+
+![diagrama2.png](src%2Fmain%2Fresources%2Fimagenes%2Fdiagrama2.png)
 
 ## Manual De Desarrolladores
 
