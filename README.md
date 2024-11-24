@@ -1,4 +1,23 @@
-## Introducción
+## Índice
+
+1. [Introducción](#1-introducción)
+2. [Manual De Desarrolladores](#2-manual-de-desarrolladores)
+   - [Características del proyecto](#características-del-proyecto)
+   - [Arquitectura del proyecto](#arquitectura-del-proyecto)
+   - [Cómo obtener el proyecto](#cómo-obtener-el-proyecto)
+3. [Manual de Usuario](#3-manual-de-usuario)
+   - [Funcionalidades principales](#funcionalidades-principales)
+   - [Ventanas principales](#ventanas-principales)
+4. [Extras realizados](#5-extras-realizados)
+   - [Ordenación de resultados y almacenaje](#ordenación-de-resultados-y-almacenaje)
+   - [Control de errores](#control-de-errores)
+5. [Propuestas de mejora](#6-propuestas-de-mejora)
+6. [Conclusión y opinión del trabajo realizado](#7-conclusión-y-opinión-del-trabajo-realizado)
+
+
+
+
+## 1. Introducción
 
 Base de datos sobre objetos del juego Minecraft. Se ha usado como ejemplo para las propiedades de estos, pero no es una base de datos fiel al juego; solo se ha usado para tener una base para desarrollar el ejercicio.
 
@@ -45,7 +64,7 @@ Las propiedades de las tablas son las siguientes:
 
 ![diagrama2.png](src%2Fmain%2Fresources%2Fimagenes%2Fdiagrama2.png)
 
-## Manual De Desarrolladores
+## 2. Manual De Desarrolladores
 
 #### Las caracteristicas del proyecto son:
 - Logearse en la aplicación usando usuarios que estén registrados.
@@ -82,7 +101,7 @@ $git clone https://github.com/AmarinoLama/proyectoUD2Minecraft
 ```
 Una vez descargado, podremos acceder al proyecto dentro del escritio, en la carpeta que hemos creado.
 
-## Manual de Usuario
+## 3. Manual de Usuario
 
 Las diferentes funcionalidades de la aplicación pueden ser accedidas tras pasar del login con los usuarios:
 
@@ -115,3 +134,60 @@ También podemos indagar para añadir, eliminar modificar o asignar objetos si c
 ![modificaritem.png](src%2Fmain%2Fresources%2Fimagenes%2Fmodificaritem.png)
 
 Todas las pantallas tienen hints o ayudas para saber lo que escribir en caso de duda, la mayoria de veces hay que seleccionar que tipo de objeto hya que modificar a qué para que aparezcan estas ayudas.
+
+## 5. Extras realizados
+
+Al comenzar el proyecto decidimos realizar los extras del login (junto a guardar los datos en una base de datos externa y hashear las contraseñas) y el control de errores, pero con el desarrollo del programa nos hemos percatado de que inconscientemente también hemos hecho el extra de ordenación de resultados. Ahora desarrollaremos más ha fondo lo que hemos codificado en cada extra:
+
+#### Ordenación de resultados de las consultas y almacenaje de los datos
+
+Respecto a este extra lo que hemos hecho, se ha basa en crear un botón que sirva para filtrar los datos de la tabla actual, en este caso solo lo implementamos en la de items debido a que no teniamos mucho tiempo.
+
+Gracias a este botón este usuario puede tomar la decesión de ordenar los datos de la tabla según la columna que desee, esto quiere decir, que el usuario puede querer ordenar por la descripción, por el nombre, el tamaño del stack o mismamente por la url, teniendo siempre una opción marcada por defecto que es la de ordenar por ID.
+
+Paralelamente a las ordenaciones también hemos añadido una opción para filtrar los datos según tres características distintas y estas son:
+
+- Quedarse únicamente con los items que tengan un stack igual o superior a 64
+- Separar los items que tengan un nombre formado con una sola palabra
+- Mostrar todos los items que su descripción tenga más de 30 letras
+
+Para gestionar todo esto, creamos una función privada que se encargue de construir la query necesaria para obtener los datos filtrados. Esta query se divide en dos partes, la primera en la que se forman los "ORDER BY" y la segunda en la que se añaden las sentencias "WHERE" que en el caso de que haya más de una sentencia seleccionada se juntaran con "AND".
+
+Si deseas visualizar la imagen de como se ve la ventana en ejecución haz click aquí.
+
+#### Control de errores
+
+Para realizar este extra nos hemos centrado principalmente en poner un montón de try catchs en los métodos que podían lanzar cualquier tipo de excepción. Una vez puesto el controlador de errores añadimos que cada vez que suceda algo correctamente salga una ventana emergente informativa con un mensaje conforme la acción se había realizado correctamente y cuando había algo que no salía bien se mostraba una ventana de error explicando los posibles fallos que pudieron originar esa excepción.
+
+Por otra parte, a la hora de ejecutar querys que hagan actualizaciones en la base de datos siempre hemos inicializado una variable con el número de líneas modificadas para controlar si se ha ejecutado todo correctamente o ha sucedido algún error. Al controlar esas varibles es mucho más sencillo identificar el tipo de problema por lo que la alerta que se lanza tendrá un mensaje más significativo, como por ejemplo en la clase de modificar que te pone "Tienes que rellenar todos los campos para poder realizar la modificación" o "Revisa los tipos de datos, ya que alguno seguramente sea un número".
+
+Independientemente a todo lo anterior, también hemos realizado casos test para las clases que podían ser testeadas, que en este caso son "Model/Conexion.java" y "Controller/LoginController.java".
+
+- En la clase LoginController se han creado test para ver como actua el programa ante los distintos casos:
+  Comprobar un usuario bien con su respectiva contraseña
+  Comprobar un usuario bien con una contraseña mal
+  Comprobar un usuario mal con una contraseña mal
+
+## 6. Propuestas de mejora
+
+No nos hemos encontrado con muchos problemas a lo largo del desarrollo de esta aplicación por lo que no tenemos muchas cosas que haya que refinar además de los estilos de la aplicación, pero eso no quita que no se puedan añadir nuevas funcionalidades a la aplicación como bien pueden ser el caso de implementar los siguientes métodos:
+
+- Poder filtrar en todas las tablas, en vez de hacerlo únicamente en la tabla de items
+- Implementar un desplegable para seleccionar dónde exportar el json para que sea más entendible y fácil de usar para el cliente
+- Añadir un atajo para cuando le deas doble click en una dato ya se habra la ventana de modificar datos con todo cargado
+- Añadir un atajo para cuando le deas click derecho puedas borrar el dato
+- Implementar más tablas
+- Permitir al usuario crear más reglas para filtrar los datos
+- Hacer que se carguen las reglas actuales al abrir la opción de filtrar datos
+- Poder elegir si ordenar en sentido ascendente o descendente
+- Añadirle un MenuBar para poder salir, exportar, iniciar sesión, ...
+
+En resumen los cambios más relevantes que se podrían hacer para la aplicación se centran en darle más libertad al usuario a la hora de manejar los datos y poder tener más privilegios (a la hora de poder crear nuevas reglas de filtrado), además de hacer el programa más simple e intuitibo ya sea usando más ventanas emergentes con preguntas tipo "¿Desea modificar o borrar este dato?". A pesar de todas estas posibles mejoras creemos que nuestro programa cumple todos los requisitos y es perfectamente comprensible ante cualquier usuario.
+
+## 7. Conclusión y opinión del trabajo realizado
+
+Este proyecto nos ha parecido propuesta de ejercicio bastante interesante y sencillo, dado que al tener ya los suficientes conocimientos en javaFX nos ha resultado muy fácil el desarrollo de esta app y no nos hemos estancado en ningún momento. Así mismo, la conexión con la BBDD y usar el patrón MVC (Model View Controllator) tampoco nos ha dado muchos problemas por lo que podemos decir que estamos bastante satisfechos con nuestro programa.
+
+Por otra parte, cabe destacar que en cuanto estilos de la aplicación son bastante simples y podríamos haber añadido más imágenes de decoración entre otras cosas, pero hemos optado por centrarnos más en pulir nuestro programa implementando más funciones como en el caso de filtrar los datos.
+
+Finalmente, respecto a las horas dedicadas hemos dedicado 18 horas en clase y a mayores 10 más desde nuestras casas, por lo que esto en total suman 28 horas a repartir entre los dos.  La nota que creemos que podría tener nuestro trabajo es de un 8´5, ya que hemos realizado todos los extras y solo tenemos un margen de error de 1´5 de errores que podemos tener en cuanto a la estructura del código.
