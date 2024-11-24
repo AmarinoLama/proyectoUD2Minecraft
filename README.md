@@ -214,6 +214,7 @@ El extra de login consiste en un login dónde los datos se almacenan en una base
 
 No nos hemos encontrado con muchos problemas a lo largo del desarrollo de esta aplicación por lo que no tenemos muchas cosas que haya que refinar además de los estilos de la aplicación, pero eso no quita que no se puedan añadir nuevas funcionalidades a la aplicación como bien pueden ser el caso de implementar los siguientes métodos:
 
+- Poder usar el Jar
 - Poder filtrar en todas las tablas, en vez de hacerlo únicamente en la tabla de items
 - Implementar un desplegable para seleccionar dónde exportar el json para que sea más entendible y fácil de usar para el cliente
 - Añadir un atajo para cuando le deas doble click en una dato ya se habra la ventana de modificar datos con todo cargado
@@ -231,5 +232,7 @@ En resumen los cambios más relevantes que se podrían hacer para la aplicación
 Este proyecto nos ha parecido propuesta de ejercicio bastante interesante y sencillo, dado que al tener ya los suficientes conocimientos en javaFX nos ha resultado muy fácil el desarrollo de esta app y no nos hemos estancado en ningún momento. Así mismo, la conexión con la BBDD y usar el patrón MVC (Model View Controllator) tampoco nos ha dado muchos problemas por lo que podemos decir que estamos bastante satisfechos con nuestro programa.
 
 Por otra parte, cabe destacar que en cuanto estilos de la aplicación son bastante simples y podríamos haber añadido más imágenes de decoración entre otras cosas, pero hemos optado por centrarnos más en pulir nuestro programa implementando más funciones como en el caso de filtrar los datos.
+
+Cabe destacar, que nuestro mayor problema al desarrollar esta aplicación fue poder usar el JAR, dado que fuimos capaces de crearlo correctamente pero a la hora de ejecutarlo no debajamos de sufrir error tras error.
 
 Finalmente, respecto a las horas dedicadas hemos dedicado 18 horas en clase y a mayores 10 más desde nuestras casas, por lo que esto en total suman 28 horas a repartir entre los dos.  La nota que creemos que podría tener nuestro trabajo es de un 8´5, ya que hemos realizado todos los extras y solo tenemos un margen de error de 1´5 de errores que podemos tener en cuanto a la estructura del código.
