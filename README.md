@@ -2,17 +2,11 @@
 
 1. [Introducción](#1-introducción)
 2. [Manual De Desarrolladores](#2-manual-de-desarrolladores)
-   - [Características del proyecto](#características-del-proyecto)
-   - [Arquitectura del proyecto](#arquitectura-del-proyecto)
-   - [Cómo obtener el proyecto](#cómo-obtener-el-proyecto)
 3. [Manual de Usuario](#3-manual-de-usuario)
-   - [Funcionalidades principales](#funcionalidades-principales)
-   - [Ventanas principales](#ventanas-principales)
-4. [Extras realizados](#5-extras-realizados)
-   - [Ordenación de resultados y almacenaje](#ordenación-de-resultados-y-almacenaje)
-   - [Control de errores](#control-de-errores)
-5. [Propuestas de mejora](#6-propuestas-de-mejora)
-6. [Conclusión y opinión del trabajo realizado](#7-conclusión-y-opinión-del-trabajo-realizado)
+4. [Reparto de tareas](#4-Reparto-de-tareas)
+5. [Extras realizados](#5-extras-realizados)
+6. [Propuestas de mejora](#6-propuestas-de-mejora)
+7. [Conclusión y opinión del trabajo realizado](#7-conclusión-y-opinión-del-trabajo-realizado)
 
 
 
@@ -135,6 +129,40 @@ También podemos indagar para añadir, eliminar modificar o asignar objetos si c
 
 Todas las pantallas tienen hints o ayudas para saber lo que escribir en caso de duda, la mayoria de veces hay que seleccionar que tipo de objeto hya que modificar a qué para que aparezcan estas ayudas.
 
+## 4. Reparto de tareas
+
+Dado que en el proyecto anterior Amán hizo gran parte del código, en este proyecto nos hemos centrado más en dividir las tareas. Siendo que Aman, se centró en la parte de conectar la aplicación con las ventana ed javaFX y el CRUD más específico, es decir, las ventanas del "SELECT", "UPDATE", "DELETE" e "INSERT".
+
+Para ser más específicos, las clases que hemos realizado conjuntamente son:
+
+- Conexion (abrirConexion, cerrarConexion y los primeros métodos de insertar datos)
+- MainController
+- Main
+- Main.fxml
+- Todas las clases de los Objetos (Items, Books, Blocks, Potions y Tools)
+- BBDD hacer tablas
+
+Las clases que ha realizado Evan son las siguientes:
+
+- LoginController
+- ExportJSONController
+- Estilos internos de los fxml
+- Meterle datos a las tablas de ambas BBDD
+
+Las clases que ha realizado Aman son las siguientes:
+
+- AnadirDatosController
+- AsignarDatosController
+- DeleteDatosController
+- ModificarItemsController
+- OrdenarController
+- Conexion (respectivos métodos llamados en las clases anteriores)
+- Tipo enumerado de la tabla Libro
+- Alertas
+- Casos test
+- styles.css
+- Los fxml de las clases mencionadas anteriormente
+
 ## 5. Extras realizados
 
 Al comenzar el proyecto decidimos realizar los extras del login (junto a guardar los datos en una base de datos externa y hashear las contraseñas) y el control de errores, pero con el desarrollo del programa nos hemos percatado de que inconscientemente también hemos hecho el extra de ordenación de resultados. Ahora desarrollaremos más ha fondo lo que hemos codificado en cada extra:
@@ -163,10 +191,24 @@ Por otra parte, a la hora de ejecutar querys que hagan actualizaciones en la bas
 
 Independientemente a todo lo anterior, también hemos realizado casos test para las clases que podían ser testeadas, que en este caso son "Model/Conexion.java" y "Controller/LoginController.java".
 
-- En la clase LoginController se han creado test para ver como actua el programa ante los distintos casos:
-  Comprobar un usuario bien con su respectiva contraseña
-  Comprobar un usuario bien con una contraseña mal
-  Comprobar un usuario mal con una contraseña mal
+- En la clase LoginControllerTest se han creado test para ver como actua el programa ante los distintos casos:
+- Comprobar un usuario bien con su respectiva contraseña
+- Comprobar un usuario bien con una contraseña mal
+- Comprobar un usuario mal con una contraseña mal
+
+- En la clase ConexionTest se han creado casos test para los siguientes métodos:
+- Comprobar el método de `obtenerColumnasTabla()` con un caso en el que se le pasa una tabla existente y otro con una tabla inexistente
+- Comprobar el método de  `cargarItemsFiltrados() ` con una query mala y otra buena
+- Comprobar todos los métodos de  `cargarTabla() ` con la tabla correspondiente para ver si devuelve algo
+- Comprobar el método de `insertarDatos()` con datos bien y datos mal
+- Comprobar el método de `borrarDatos()` con datos bien y datos mal
+- Comprobar el método de `asignarItem()` con datos bien y datos mal
+- Comprobar el método de `cargarDatosObjeto()` con existentes y otros inexistentes
+- Comprobar el método de `modificarObjeto()` con datos existentes y otros no
+
+#### Login
+
+El extra de login consiste en un login dónde los datos se almacenan en una base da datos independiente, la cual contiene una ID, un nombre de usuario y su respectiva contraseña hasheada.
 
 ## 6. Propuestas de mejora
 
