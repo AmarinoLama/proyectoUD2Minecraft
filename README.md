@@ -16,7 +16,7 @@ Las propiedades de las tablas son las siguientes:
 - ItmImage BLOB
 
 #### Blocks
-- BlkId INT NOT NULL, -- ID
+- BlkId INT NOT NULL,
 - BlkIdName VARCHAR(30) NOT NULL
 - BlkLuminosity INT NOT NULL
 -  BlkBlastResistance INT NOT NULL
