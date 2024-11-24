@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="241.0" prefWidth="521.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.AsignarItemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="241.0" prefWidth="521.0" style="-fx-background-color: #00995c; -fx-border-color: #00331f;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.badpals.proyectoud2minecraft.Controller.AsignarItemController">
    <children>
       <ComboBox fx:id="cmbTipoItem" layoutX="378.0" layoutY="25.0" onAction="#asignarTipo" prefHeight="25.0" prefWidth="125.0" style="-fx-border-color: #00331f; -fx-border-radius: 3;">
          <items>
