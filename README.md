@@ -56,17 +56,18 @@ Las propiedades de las tablas son las siguientes:
     - Crear un item básico
     - Especializar un item básico a uno específico
 
-[INSERTAR FOTO DE ESQUEMA]
+![arquitecturaHumana.png](src%2Fmain%2Fresources%2Fimagenes%2FarquitecturaHumana.png)
 
+Las clases/metodos que componen las funcionalidades anteriores son las siguientes:
 
-[INSERTAR FOTO ESQUEMA CON CLASES]
+![arquitecturaLogica.png](src%2Fmain%2Fresources%2Fimagenes%2FarquitecturaLogica.png)
+
 
 ##### Arquitectura del proyecto:
 
 Se ha usado el patrón MVC (Modelo, Vista, Controlador) dónde cada responsabilidad de las clases se encapsula con su deber. De este modo la arquitectura es la siguiente:
 
-[FOTO DE LAS CARPETAS CON LA ARQUITECTURA]
-
+![mcv.png](src%2Fmain%2Fresources%2Fimagenes%2Fmcv.png)
 
 ##### Como obtener el proyecto
 
