@@ -95,6 +95,13 @@ $git clone https://github.com/AmarinoLama/proyectoUD2Minecraft
 ```
 Una vez descargado, podremos acceder al proyecto dentro del escritio, en la carpeta que hemos creado.
 
+Para ejecutar el JAR hemos tenido muchos problemas por lo que no podemos decir como ejecutarlo con exactitud, pero se supone que ejecutando el comando:
+
+```
+$mvn package
+$java --module-path <ruta sdk> --add-modules javafx.controls,javafx.fxml -jar .out/artifacts/proyectoUD2Minecraft_jar/proyectoUD2Minecraft.jar
+```
+
 ## 3. Manual de Usuario
 
 Las diferentes funcionalidades de la aplicación pueden ser accedidas tras pasar del login con los usuarios:
